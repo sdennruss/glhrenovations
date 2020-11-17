@@ -1,12 +1,13 @@
 import React from "react";
 import LandingPage from "./landing";
-import Header from "./header";
+import About from "../about/about";
 
 const Home = () => {
   return (
     <React.Fragment>
       <div className="homepage-container">
         <LandingPage />
+        <About />
       </div>
     </React.Fragment>
   );

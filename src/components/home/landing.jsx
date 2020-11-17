@@ -14,6 +14,9 @@ const LandingPage = () => {
         </div>
         <div className="glh-email">hello@glh.com</div>
       </div>
+      <div className="footer-container">
+        <p className="glh-number">+16474692532</p>
+      </div>
     </React.Fragment>
   );
 };

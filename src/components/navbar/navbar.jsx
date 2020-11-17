@@ -1,20 +1,21 @@
-import React from 'react';
+import React from "react";
 import { Link } from "react-router-dom";
 
-const NavBar = ({onToggle, expand}) => {
-  const navigations = ["Home", "Villa Projects", "Contact"]
+const NavBar = ({ onToggle, expand }) => {
+  const navigations = ["Home", "Villa Projects", "Contact"];
   return (
-<React.Fragment>
+    <React.Fragment>
       <div className="toggle-container">
         <nav className="toggle-navigation">
           {navigations.map((navigation) => (
             <ul key={navigation} className="navigation-list">
               <li className="navigation-items">
                 <Link
+                  onClick={() => onToggle(!expand)}
                   className="toggle-links"
                   to={`/${navigation}`}
                 >
-                 {navigation}
+                  {navigation}
                 </Link>
               </li>
             </ul>
@@ -22,7 +23,7 @@ const NavBar = ({onToggle, expand}) => {
         </nav>
       </div>
     </React.Fragment>
-   );
-}
+  );
+};
 
 export default NavBar;

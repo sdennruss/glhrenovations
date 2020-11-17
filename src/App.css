@@ -18,7 +18,7 @@ body {
 }
 
 :root {
-  --dominant-color: #47614b;
+  --dominant-color: #98ad9b;
   --secondary-color: #7e93b0;
   --background-color: white;
   --accent-color-1: #c4c4c4;
@@ -79,22 +79,32 @@ body {
 }
 
 .glh-email {
-  right: 0rem;
-  transform: rotate(-90deg);
+  right: -1.5rem;
+  transform: rotate(90deg);
 }
 
 .canggu-image {
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 100%;
-  max-height: 70vh;
+  max-width: 95%;
   position: relative;
 }
 
 .canggu-front {
-  width: 80%;
-  height: auto;
+  width: 100%;
+}
+
+.hamburger {
+  padding: 0.3rem;
+  font-size: 3rem;
+  position: fixed;
+  cursor: pointer;
+  z-index: 10;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  right: 1rem;
 }
 
 .toggle-container {
@@ -155,12 +165,92 @@ body {
   height: 6vh;
 }
 
+/* About */
+
+.about-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  height: 100vh;
+}
+
+.about-column {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  flex-basis: calc(100% / 2);
+  flex-shrink: 0;
+}
+
+.about-left {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: var(--dominant-color);
+  height: 88vh;
+  border-radius: 0 8rem 0 8rem;
+  flex-basis: 90%;
+  flex-shrink: 0;
+}
+
+.grants-name {
+  font-size: 10rem;
+  font-family: "Playfair Display", serif;
+  flex-basis: 40%;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  letter-spacing: 1.4rem;
+  width: 80%;
+  padding-left: 2rem;
+}
+
+.about-bio {
+  display: flex;
+  width: 80%;
+  flex-basis: 60%;
+  padding: 2rem;
+}
+
+.about-grant {
+  font-size: 2rem;
+}
+
+.square-border {
+  border: solid 8px black;
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  right: 15rem;
+  position: absolute;
+  flex: 1;
+}
+
+.grant-image {
+  display: flex;
+}
+
+.granite {
+  height: 60vh;
+  position: relative;
+  right: 2rem;
+}
+
+/* Contact */
+
 .footer-container {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 6vh;
+}
+
+.glh-number {
   position: fixed;
   width: 100%;
+  display: flex;
+  justify-content: center;
 }

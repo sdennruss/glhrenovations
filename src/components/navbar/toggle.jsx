@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import vvcLogo from "./logo-2.png";
 import NavBar from "./navbar";
 
 const Toggle = () => {
@@ -9,12 +7,6 @@ const Toggle = () => {
   return (
     <React.Fragment>
       <div className="hamburger-container">
-
-        <div className="vvc-logo">
-          <Link to="/home">
-            <img src={vvcLogo} className="brand-logo" />
-          </Link>
-        </div>
         <div className="hamburger">
           <input
             onClick={() => setExpand(!expand)}
@@ -30,12 +22,7 @@ const Toggle = () => {
         </div>
       </div>
 
-      {expand && (
-        <NavBar
-          onToggle={setExpand}
-          expand={expand}
-        />
-      )}
+      {expand && <NavBar onToggle={setExpand} expand={expand} />}
     </React.Fragment>
   );
 };
