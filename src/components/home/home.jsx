@@ -1,14 +1,14 @@
 import React from "react";
 import LandingPage from "./landing";
 import About from "../about/about";
+import Services from "../services/services";
 
 const Home = () => {
   return (
     <React.Fragment>
-      <div className="homepage-container">
-        <LandingPage />
-        <About />
-      </div>
+      <LandingPage />
+      <About />
+      <Services />
     </React.Fragment>
   );
 };

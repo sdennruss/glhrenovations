@@ -7,10 +7,12 @@
   font-size: 62.5%;
 }
 
+img {
+  max-width: 100%;
+}
+
 html,
 body {
-  /* width: 100%;
-  height: 100%; */
   margin: 0px;
   padding: 0px;
   min-height: 100vh;
@@ -24,87 +26,134 @@ body {
   --accent-color-1: #c4c4c4;
   --accent-color-2: #000;
 }
-
-/* Home Page */
-
-.homepage-container {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-}
-
+/* Header */
 .header-container {
   display: flex;
-  height: 7vh;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-}
-
-.glh-logo,
-.toggle-menu {
-  position: fixed;
-  display: flex;
-  width: 100%;
+  height: 10vh;
+  /* padding: 1rem; */
+  /* background: gainsboro; */
 }
 
 .glh-logo {
-  justify-content: flex-start;
-  left: 0rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: gold; */
+  position: fixed;
+  left: 0;
+  width: 5%;
+  height: 10vh;
+  top: 0;
+  flex-basis: 5%;
 }
 
-.toggle-menu {
-  justify-content: flex-end;
+.logo {
+  width: 50%;
 }
 
 .glh-name {
   display: flex;
-  justify-content: center;
-}
-
-.landing-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  height: 88vh;
-}
-
-.pinterest-contact,
-.glh-email {
   position: fixed;
-}
-
-.pinterest-contact {
-  left: 0rem;
-  transform: rotate(-90deg);
-}
-
-.glh-email {
-  right: -1.5rem;
-  transform: rotate(90deg);
-}
-
-.canggu-image {
-  display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 95%;
+  /* background-color: honeydew; */
+  flex-basis: 90%;
+}
+
+.company-name {
+  font-size: 2rem;
+  font-family: "Playfair Display", serif;
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+
+/* Nav */
+
+.hamburger {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: khaki; */
+  flex-basis: 5%;
+  height: inherit;
+  position: fixed;
+  right: 0;
+  width: 5%;
+  top: 0;
+  height: 10vh;
+  z-index: 10;
+  transform: rotate(-180deg);
+}
+
+input {
+  display: none;
+}
+
+.open {
+  background-color: #3c3c3c;
+  width: 2.4rem;
+  height: 0.1rem;
+  display: block;
+  cursor: pointer;
   position: relative;
 }
 
-.canggu-front {
-  width: 100%;
+.open:before {
+  content: "";
+  background-color: #3c3c3c;
+  width: 1.5rem;
+  height: 0.1rem;
+  display: block;
+  position: relative;
+  top: -0.8rem;
+  transform: rotate(0deg);
+  transition: all 0.3s ease;
 }
 
-.hamburger {
-  padding: 0.3rem;
-  font-size: 3rem;
-  position: fixed;
+.open:after {
+  content: "";
+  background-color: #3c3c3c;
+  width: 1.5rem;
+  height: 0.1rem;
+  display: block;
+  position: relative;
+  top: 0.8rem;
+  transform: rotate(0deg);
+  transition: all 0.3s ease;
+}
+
+.menuOpen {
+  display: block;
   cursor: pointer;
-  z-index: 10;
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  right: 1rem;
+}
+
+.menuOpen:hover .open:before {
+  width: 2.4rem;
+}
+
+.menuOpen:hover .open:after {
+  width: 2.4rem;
+}
+
+@keyframes expand {
+  0% {
+    transform: translateX(50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes close {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
 }
 
 .toggle-container {
@@ -119,20 +168,46 @@ body {
   animation: expand 1400ms ease forwards;
   z-index: 4;
 }
-@keyframes expand {
-  0% {
-    transform: translateX(50%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
 
 .toggle-navigation {
   display: flex;
   flex-direction: column;
   height: 100vh;
   background-color: var(--background-color);
+}
+
+#menuToggle:checked ~ .menuEffects ul {
+  opacity: 1;
+}
+
+#menuToggle:checked ~ .menuOpen .open {
+  background-color: transparent;
+}
+
+#menuToggle:checked ~ .menuOpen .open:before {
+  content: "";
+  background-color: black;
+  transform: rotate(45deg);
+  width: 2.4rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 3;
+}
+
+#menuToggle:checked ~ .menuOpen .open:after {
+  content: "";
+  background-color: black;
+  transform: rotate(-45deg);
+  width: 2.4rem;
+  position: relative;
+  top: 0;
+  right: 0;
+  z-index: 3;
+}
+
+#menuToggle:not(:checked) ~ .menuEffects ul {
+  transform: translateY(-30%);
 }
 
 .navigation-list {
@@ -157,100 +232,273 @@ body {
   letter-spacing: 0.2rem;
 }
 
-.header-container {
+/* Landing */
+
+.landing-container {
+  display: flex;
   position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+.pinterest-contact,
+.email-contact {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 6vh;
+  position: fixed;
+  flex-basis: 5%;
+}
+
+.pinterest-contact {
+  transform: rotate(-90deg);
+  left: 0;
+  width: 5%;
+  height: 90vh;
+  bottom: 0;
+}
+
+.canggu-image-container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  flex-basis: 90%;
+}
+
+.email-contact {
+  transform: rotate(90deg);
+  right: 0;
+  width: 5%;
+  bottom: 0;
+  height: 90vh;
 }
 
 /* About */
 
 .about-container {
-  position: relative;
   display: flex;
+  position: relative;
+  justify-content: center;
   align-items: center;
-  flex-direction: row;
   height: 100vh;
 }
 
 .about-column {
   display: flex;
   position: relative;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  flex-basis: 90%;
+  width: 90%;
+}
+
+.about-left,
+.about-right {
+  display: flex;
+  position: relative;
   flex-basis: calc(100% / 2);
-  flex-shrink: 0;
+  height: 80vh;
 }
 
 .about-left {
+  position: relative;
+  background-color: var(--dominant-color);
+  border-radius: 0 8rem 0 8rem;
+  flex-direction: column;
+}
+.contractor-name {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 40%;
+}
+.grants-name {
   display: flex;
   flex-direction: column;
   position: relative;
-  background-color: var(--dominant-color);
-  height: 88vh;
-  border-radius: 0 8rem 0 8rem;
-  flex-basis: 90%;
-  flex-shrink: 0;
+  font-family: "Playfair Display", serif;
+  text-transform: uppercase;
+  letter-spacing: 1.4rem;
+  font-size: 10rem;
 }
 
-.grants-name {
-  font-size: 10rem;
-  font-family: "Playfair Display", serif;
-  flex-basis: 40%;
-  text-transform: uppercase;
-  display: flex;
-  align-items: center;
-  letter-spacing: 1.4rem;
-  width: 80%;
-  padding-left: 2rem;
+.underline {
+  background: black;
+  width: 20%;
+  height: 0.1rem;
 }
 
 .about-bio {
   display: flex;
-  width: 80%;
+  justify-content: center;
+  position: relative;
   flex-basis: 60%;
-  padding: 2rem;
 }
 
 .about-grant {
+  width: 60%;
   font-size: 2rem;
 }
 
+.about-right {
+  align-items: center;
+}
+
 .square-border {
-  border: solid 8px black;
-  width: 100%;
-  height: 70vh;
+  border: solid 10px black;
+  width: 110%;
+  height: 65vh;
+  right: 0rem;
   display: flex;
-  right: 15rem;
   position: absolute;
-  flex: 1;
 }
 
 .grant-image {
-  display: flex;
-}
-
-.granite {
-  height: 60vh;
-  position: relative;
-  right: 2rem;
-}
-
-/* Contact */
-
-.footer-container {
   position: relative;
   display: flex;
+  right: 10rem;
+  width: 95%;
+}
+
+/* Services */
+
+.services-container {
+  display: flex;
+  position: relative;
   justify-content: center;
   align-items: center;
-  height: 6vh;
+  flex-direction: column;
+  height: 100vh;
 }
 
-.glh-number {
-  position: fixed;
-  width: 100%;
+.services {
   display: flex;
+  position: relative;
+  align-items: center;
   justify-content: center;
+  flex-direction: column;
+  width: 90%;
+  height: 80vh;
+}
+
+.services-title-container {
+  display: flex;
+  position: relative;
+  justify-content: flex-end;
+  flex-basis: 5%;
+  width: 100%;
+}
+
+.service-title {
+  display: flex;
+  flex-direction: column;
+  font-family: "Playfair Display", serif;
+  text-transform: uppercase;
+  position: relative;
+  font-size: 10rem;
+}
+
+.underline-1 {
+  background: black;
+  width: 20%;
+  height: 0.1rem;
+}
+
+.services-button-container {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  flex-basis: 5%;
+  width: 100%;
+}
+
+/* .triangle {
+  position: absolute;
+  width: 40rem;
+  height: 40rem;
+  border: 1px solid black;
+  transform: rotate(-120deg);
+  overflow-y: hidden;
+} */
+
+.cards-container {
+  display: flex;
+  justify-content: space-evenly;
+  position: relative;
+  flex-basis: 90%;
+  width: 100%;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-basis: 90%;
+}
+
+.service-number-1,
+.service-number-2,
+.service-number-3 {
+  flex-basis: 40%;
+  display: flex;
+}
+
+.service-description-1,
+.service-description-2,
+.service-description-3 {
+  flex-basis: 40%;
+  display: flex;
+}
+
+.service-type-1,
+.service-type-2,
+.service-type-3 {
+  display: flex;
+  position: relative;
+  align-items: center;
+  flex-basis: 10%;
+}
+
+.service-description-1,
+.service-description-2,
+.service-description-3 {
+  align-items: flex-start;
+}
+
+.service-number-2,
+.service-type-2,
+.service-description-2 {
+  justify-content: center;
+}
+
+.service-number-3,
+.service-type-3,
+.service-description-3 {
+  justify-content: flex-end;
+}
+
+.s-number {
+  font-size: 11rem;
+  font-family: "Playfair Display", serif;
+  color: var(--secondary-color);
+  opacity: 0.8;
+}
+
+.s-type {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.2rem;
+}
+.s-description {
+  font-size: 1rem;
+  width: 80%;
+  text-align: justify;
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+  }
 }

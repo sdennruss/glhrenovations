@@ -7,7 +7,12 @@ const About = () => {
       <div className="about-container">
         <div className="about-column">
           <div className="about-left">
-            <h2 className="grants-name">Grant</h2>
+            <div className="contractor-name">
+              <h2 className="grants-name">
+                Grant<span className="underline"></span>
+              </h2>
+            </div>
+
             <div className="about-bio">
               <p className="about-grant">
                 Contrary to popular belief, Lorem Ipsum is not simply random
@@ -20,13 +25,12 @@ const About = () => {
               </p>
             </div>
           </div>
-        </div>
 
-        <div className="about-column">
-          <div className="square-border"></div>
-          <div className="grant-image">
-            {" "}
-            <img className="granite" src={GrantPic} />
+          <div className="about-right">
+            <div className="square-border"></div>
+            <div className="grant-image">
+              <img className="granite" src={GrantPic} />
+            </div>
           </div>
         </div>
       </div>

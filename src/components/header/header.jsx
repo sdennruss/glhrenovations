@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import NavBar from "../navbar/navbar";
+import Logo from "./glhlogo.png";
 
 const Header = () => {
   const [expand, setExpand] = useState(false);
@@ -7,8 +8,14 @@ const Header = () => {
   return (
     <React.Fragment>
       <div className="header-container">
-        <div className="glh-logo">logo</div>
-        <div className="glh-name">glh renovations</div>
+        <div className="glh-logo">
+          <img className="logo" src={Logo} />
+        </div>
+
+        <div className="glh-name">
+          <h1 className="company-name">GLH Renovations</h1>
+        </div>
+
         <div className="hamburger">
           <input
             onClick={() => setExpand(!expand)}

@@ -5,6 +5,8 @@ import VillaProjects from "./components/villaProjects/villaProjects";
 import "./App.css";
 import ContactUs from "./components/contact/contactUs";
 import Header from "./components/header/header";
+import Footer from "./components/contact/footer";
+import Services from "./components/services/services";
 
 const App = () => {
   return (

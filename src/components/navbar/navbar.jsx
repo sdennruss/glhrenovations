@@ -5,7 +5,7 @@ const NavBar = ({ onToggle, expand }) => {
   const navigations = ["Home", "Villa Projects", "Contact"];
   return (
     <React.Fragment>
-      <div className="toggle-container">
+      <div className="toggle-container menuEffects">
         <nav className="toggle-navigation">
           {navigations.map((navigation) => (
             <ul key={navigation} className="navigation-list">
