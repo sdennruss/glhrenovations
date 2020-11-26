@@ -16,7 +16,6 @@ const Services = () => {
             <a className="s-button">Get in Touch</a>
           </div>
         </div>
-        <div className="triangle"></div>
       </div>
     </React.Fragment>
   );

@@ -1,9 +1,12 @@
-import React from 'react';
+import React from "react";
+import ProjectCards from "./projectCards";
 
 const VillaProjects = () => {
   return (
-    <div>Villa Projects</div>
-   );
-}
+    <div className="before-after-container">
+      <ProjectCards />
+    </div>
+  );
+};
 
 export default VillaProjects;

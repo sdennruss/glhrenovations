@@ -13,8 +13,6 @@ img {
 
 html,
 body {
-  margin: 0px;
-  padding: 0px;
   min-height: 100vh;
   overflow-x: hidden;
 }
@@ -33,7 +31,8 @@ body {
   align-items: center;
   width: 100%;
   height: 10vh;
-  /* padding: 1rem; */
+  top: 0;
+  padding: 1rem;
   /* background: gainsboro; */
 }
 
@@ -235,10 +234,13 @@ input {
 /* Landing */
 
 .landing-container {
+  top: 0;
   display: flex;
   position: relative;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+  /* height: 100vh; */
 }
 
 .pinterest-contact,
@@ -261,8 +263,10 @@ input {
 .canggu-image-container {
   display: flex;
   justify-content: center;
+  align-items: center;
   position: relative;
   flex-basis: 90%;
+  min-width: 90%;
 }
 
 .email-contact {
@@ -281,6 +285,8 @@ input {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  top: 0;
+  bottom: 0;
 }
 
 .about-column {
@@ -338,7 +344,7 @@ input {
 
 .about-grant {
   width: 60%;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .about-right {
@@ -367,8 +373,8 @@ input {
   display: flex;
   position: relative;
   justify-content: center;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
   height: 100vh;
 }
 
@@ -379,14 +385,14 @@ input {
   justify-content: center;
   flex-direction: column;
   width: 90%;
-  height: 80vh;
 }
 
 .services-title-container {
   display: flex;
   position: relative;
   justify-content: flex-end;
-  flex-basis: 5%;
+  align-items: center;
+  height: 35vh;
   width: 100%;
 }
 
@@ -409,45 +415,35 @@ input {
   display: flex;
   position: relative;
   justify-content: center;
-  flex-basis: 5%;
   width: 100%;
+  height: 5vh;
 }
-
-/* .triangle {
-  position: absolute;
-  width: 40rem;
-  height: 40rem;
-  border: 1px solid black;
-  transform: rotate(-120deg);
-  overflow-y: hidden;
-} */
 
 .cards-container {
   display: flex;
   justify-content: space-evenly;
   position: relative;
-  flex-basis: 90%;
+  flex-basis: 50%;
+  height: 60vh;
   width: 100%;
 }
 
 .card {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  flex-basis: 90%;
+  justify-content: baseline;
+  flex-basis: 30%;
 }
 
 .service-number-1,
 .service-number-2,
 .service-number-3 {
-  flex-basis: 40%;
   display: flex;
 }
 
 .service-description-1,
 .service-description-2,
 .service-description-3 {
-  flex-basis: 40%;
   display: flex;
 }
 
@@ -457,7 +453,6 @@ input {
   display: flex;
   position: relative;
   align-items: center;
-  flex-basis: 10%;
 }
 
 .service-description-1,
@@ -497,8 +492,185 @@ input {
   text-align: justify;
 }
 
+/* Before After */
+
+.before-after-container {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: flex-end;
+  height: 100vh;
+  /* background-color: cornsilk; */
+  z-index: -2;
+  width: 100%;
+}
+
+.project-card-container {
+  display: flex;
+  position: relative;
+  /* background: crimson; */
+  width: 90%;
+  height: 90vh;
+}
+
+.project-card {
+  /* background-color: darkkhaki; */
+  flex: 1;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  width: 90%;
+}
+
+.villa-name-container,
+.next-button-container {
+  position: relative;
+  display: flex;
+  flex: 1;
+}
+
+.villa-name {
+  position: absolute;
+  text-transform: uppercase;
+  font-size: 10rem;
+  width: 90%;
+  /* background: pink; */
+  left: 5%;
+  z-index: 2;
+}
+
+.villa-content-container {
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+
+.villa-button-container {
+  display: flex;
+  position: absolute;
+  align-items: flex-end;
+  z-index: 2;
+  width: 30%;
+  height: 100%;
+  flex: 1;
+  bottom: 2rem;
+  left: 10%;
+}
+
+.see-villa-button,
+.before-button,
+.after-button {
+  font-size: 1.4rem;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* height: 4rem; */
+  color: white;
+  padding: 2rem;
+}
+
+.see-villa-button {
+  background: var(--dominant-color);
+  border-radius: 4rem 0 0 4rem;
+}
+
+.before-button {
+  border-left: 1px solid #555;
+  border-right: 1px solid #555;
+  background: #000;
+}
+
+.after-button {
+  border-radius: 0 4rem 4rem 0;
+  background: #000;
+}
+
+.villa-image-container {
+  position: relative;
+  flex: 4;
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.villa-image {
+  max-width: 70%;
+  max-height: 90vh;
+}
+
+.nex
+
+/* .project-card-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex-basis: 90%;
+  height: 80vh;
+}
+
+.project-card {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  flex-basis: 100%;
+  width: 100%;
+  background-color: cadetblue;
+}
+
+.villa-name-container {
+  position: relative;
+  display: flex;
+  flex-basis: 10%;
+  z-index: 2;
+  padding-left: 3rem;
+}
+
+.villa-name {
+  position: relative;
+  font-size: 9rem;
+  font-family: "Playfair Display", serif;
+  text-transform: uppercase;
+}
+
+.villa-content-container {
+  display: flex;
+  position: relative;
+  justify-content: flex-end;
+  flex-basis: 85%;
+}
+
+.villa-button-container {
+  flex-basis: 25%;
+  display: flex;
+  position: relative;
+  align-items: flex-end;
+}
+
+.villa-image-container {
+  position: relative;
+  display: flex;
+  flex-basis: 75%;
+  max-width: 75%;
+}
+
+.next-button-container {
+  position: relative;
+  display: flex;
+  flex-basis: 10%;
+} */
+
 @media (max-width: 768px) {
   .about-container {
     flex-direction: column;
+  }
+
+  .villa-image {
+    max-width: 100%;
+    min-width: 100%;
+    /* max-height: 70vh; */
   }
 }
