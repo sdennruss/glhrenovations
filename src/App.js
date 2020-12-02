@@ -5,8 +5,7 @@ import VillaProjects from "./components/villaProjects/villaProjects";
 import "./App.css";
 import ContactUs from "./components/contact/contactUs";
 import Header from "./components/header/header";
-import Footer from "./components/contact/footer";
-import Services from "./components/services/services";
+import Cemagi from "./components/villaProjects/cemagi";
 
 const App = () => {
   return (
@@ -18,7 +17,7 @@ const App = () => {
           <Route path="/Home" component={Home} />
           <Route path="/Villa Projects" component={VillaProjects} />
           <Route path="/Contact" component={ContactUs} />
-          <Route paht="/" exact component={Home} />
+          <Route path="/" exact component={Home} />
         </Switch>
       </div>
     </React.Fragment>

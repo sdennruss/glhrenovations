@@ -13,6 +13,8 @@ img {
 
 html,
 body {
+  padding: 0;
+  margin: 0;
   min-height: 100vh;
   overflow-x: hidden;
 }
@@ -175,7 +177,7 @@ input {
   background-color: var(--background-color);
 }
 
-#menuToggle:checked ~ .menuEffects ul {
+#menuToggle:checked ~ .menuEffects .navigation-list {
   opacity: 1;
 }
 
@@ -205,7 +207,7 @@ input {
   z-index: 3;
 }
 
-#menuToggle:not(:checked) ~ .menuEffects ul {
+#menuToggle:not(:checked) ~ .menuEffects .navigation-list {
   transform: translateY(-30%);
 }
 
@@ -499,9 +501,10 @@ input {
   position: relative;
   justify-content: center;
   align-items: flex-end;
-  height: 100vh;
+  min-height: 100vh;
+  max-height: 100vh;
+  min-width: 100%;
   /* background-color: cornsilk; */
-  z-index: -2;
   width: 100%;
 }
 
@@ -530,13 +533,17 @@ input {
   flex: 1;
 }
 
+.villa-name-container {
+  padding-bottom: 5rem;
+}
+
 .villa-name {
   position: absolute;
   text-transform: uppercase;
   font-size: 10rem;
   width: 90%;
   /* background: pink; */
-  left: 5%;
+  left: 2%;
   z-index: 2;
 }
 
@@ -550,41 +557,52 @@ input {
   display: flex;
   position: absolute;
   align-items: flex-end;
+  cursor: pointer;
   z-index: 2;
   width: 30%;
-  height: 100%;
   flex: 1;
   bottom: 2rem;
-  left: 10%;
 }
 
 .see-villa-button,
 .before-button,
 .after-button {
+  position: relative;
   font-size: 1.4rem;
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  /* height: 4rem; */
+  height: 6rem;
   color: white;
-  padding: 2rem;
+  padding: 1rem;
+  cursor: pointer;
+  left: 8%;
 }
 
 .see-villa-button {
-  background: var(--dominant-color);
+  background-color: black;
   border-radius: 4rem 0 0 4rem;
 }
 
+.see-villa-button:hover {
+  background: var(--dominant-color);
+}
+
 .before-button {
-  border-left: 1px solid #555;
+  border-left: 1px solid #000;
   border-right: 1px solid #555;
   background: #000;
 }
 
+.before-button:hover,
+.after-button:hover {
+  border-left: 1px solid #000;
+  background-color: var(--dominant-color);
+}
 .after-button {
   border-radius: 0 4rem 4rem 0;
-  background: #000;
+  background-color: var(--dominant-color);
 }
 
 .villa-image-container {
@@ -597,71 +615,94 @@ input {
 }
 
 .villa-image {
-  max-width: 70%;
-  max-height: 90vh;
-}
-
-.nex
-
-/* .project-card-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  flex-basis: 90%;
-  height: 80vh;
-}
-
-.project-card {
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  flex-basis: 100%;
-  width: 100%;
-  background-color: cadetblue;
-}
-
-.villa-name-container {
-  position: relative;
-  display: flex;
-  flex-basis: 10%;
-  z-index: 2;
-  padding-left: 3rem;
-}
-
-.villa-name {
-  position: relative;
-  font-size: 9rem;
-  font-family: "Playfair Display", serif;
-  text-transform: uppercase;
-}
-
-.villa-content-container {
-  display: flex;
-  position: relative;
-  justify-content: flex-end;
-  flex-basis: 85%;
-}
-
-.villa-button-container {
-  flex-basis: 25%;
-  display: flex;
-  position: relative;
-  align-items: flex-end;
-}
-
-.villa-image-container {
-  position: relative;
-  display: flex;
-  flex-basis: 75%;
-  max-width: 75%;
+  max-width: 80%;
+  max-height: 80vh;
 }
 
 .next-button-container {
   position: relative;
   display: flex;
-  flex-basis: 10%;
-} */
+  justify-content: flex-end;
+  align-items: center;
+  /* padding: 1rem 0rem; */
+}
+
+.next-button-left,
+.next-button-right {
+  display: flex;
+  justify-content: center;
+  width: 5%;
+  cursor: pointer;
+  padding: 1rem;
+}
+
+.next-button-left:hover,
+.next-button-right:hover {
+  background-color: var(--dominant-color);
+}
+
+.left-arrow,
+.right-arrow {
+  cursor: pointer;
+  min-width: 50%;
+  max-width: 50%;
+}
+
+.left-arrow {
+  transform: rotate(90deg);
+}
+
+.right-arrow {
+  transform: rotate(-90deg);
+}
+
+/* Sidebar */
+
+.preview-container {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.preview-card,
+.sub-link-container,
+.villa-details-container {
+  display: flex;
+  position: relative;
+  width: 90%;
+}
+
+.villa-links,
+.villa-content-details {
+  flex-basis: 33.3%;
+}
+
+.cemagi-container,
+.tb-container,
+.loft-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  z-index: -1;
+}
+
+.cemagi-container {
+  background-color: lavender;
+}
+
+.tb-container {
+  background-color: lemonchiffon;
+}
+
+.loft-container {
+  background-color: lightblue;
+}
+
+/* Tumbak Bayuh SubLink */
 
 @media (max-width: 768px) {
   .about-container {
