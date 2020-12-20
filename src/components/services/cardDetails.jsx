@@ -3,7 +3,7 @@ import React from "react";
 const CardDetails = ({ number, type, description, service }) => {
   return (
     <React.Fragment>
-      <div className="card">
+      <div className={`card-${service}`}>
         <div className={`service-number-${service}`}>
           <h2 className="s-number">{number}</h2>
         </div>

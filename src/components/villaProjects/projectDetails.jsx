@@ -1,35 +1,57 @@
 import React, { useState } from "react";
-import cemagi from "./assets/cemagiafter.jpg";
+import { Link } from "react-router-dom";
 import arrow from "./assets/arrow.png";
 import { villaRenos } from "./beforeAfters";
 
 const ProjectDetails = () => {
   const [changePhoto, setChangePhoto] = useState(0);
   const [beforePhoto, setBefore] = useState(villaRenos[changePhoto].after);
+  const [goGreen, setGoGreen] = useState("before-button");
+  const [goGreenAfter, setGoGreenAfter] = useState("after-button");
 
-  const handleRightPhotoChange = (rightImage, afterImage) => {
+  const handleRightPhotoChange = (rightImage, green, black) => {
     rightImage === 3 ? setChangePhoto(0) : setChangePhoto(rightImage);
     rightImage === 3
       ? setBefore(villaRenos[0].after)
       : setBefore(villaRenos[changePhoto + 1].after);
+    setGoGreenAfter(green);
+    setGoGreen(black);
   };
 
-  const handleLeftPhotoChange = (leftImage, beforeImage) => {
+  const handleLeftPhotoChange = (leftImage, green, black) => {
     leftImage === 2 ? setChangePhoto(0) : setChangePhoto(leftImage + 1);
     leftImage === 2
       ? setBefore(villaRenos[0].after)
       : setBefore(villaRenos[changePhoto + 1].after);
+    setGoGreenAfter(green);
+    setGoGreen(black);
   };
 
-  const handleBeforeAfterPhoto = (beforeafter) => {
+  const handleBeforePhoto = (beforeafter, green, black) => {
     setBefore(beforeafter);
+    setGoGreen(green);
+    setGoGreenAfter(black);
+    console.log("before button clicked");
+  };
+
+  const handleAfterPhoto = (beforeafter, black, green) => {
+    setBefore(beforeafter);
+    setGoGreen(black);
+    setGoGreenAfter(green);
+
+    console.log("before button clicked");
   };
 
   return (
     <React.Fragment>
       <div className="project-card">
+        <div className="before-after-title">
+          <h2 className="b-a-title">
+            Before and Afters <span className="underline-1"></span>
+          </h2>
+        </div>
         <div className="villa-name-container">
-          <h2 className="villa-name">{villaRenos[changePhoto].villa}</h2>
+          <p className="villa-name">{villaRenos[changePhoto].villa}</p>
         </div>
 
         <div className="villa-content-container">
@@ -38,20 +60,33 @@ const ProjectDetails = () => {
           </div>
 
           <div className="villa-button-container">
-            <a className="see-villa-button">See Villa</a>
+            <Link
+              to={`/Villa Projects/${villaRenos[changePhoto].seeVilla}`}
+              className="see-villa-button"
+            >
+              See Villa
+            </Link>
             <a
               onClick={() =>
-                handleBeforeAfterPhoto(villaRenos[changePhoto].before)
+                handleBeforePhoto(
+                  villaRenos[changePhoto].before,
+                  "go-green",
+                  "go-green-after ",
+                )
               }
-              className="before-button"
+              className={goGreen}
             >
               Before
             </a>
             <a
               onClick={() =>
-                handleBeforeAfterPhoto(villaRenos[changePhoto].after)
+                handleAfterPhoto(
+                  villaRenos[changePhoto].after,
+                  "before-button",
+                  "after-button",
+                )
               }
-              className="after-button"
+              className={goGreenAfter}
             >
               After
             </a>
@@ -61,7 +96,11 @@ const ProjectDetails = () => {
         <div className="next-button-container">
           <a
             onClick={() =>
-              handleLeftPhotoChange(changePhoto, villaRenos[changePhoto].after)
+              handleLeftPhotoChange(
+                changePhoto,
+                "after-button",
+                "before-button",
+              )
             }
             className="next-button-left"
           >
@@ -71,7 +110,8 @@ const ProjectDetails = () => {
             onClick={() =>
               handleRightPhotoChange(
                 changePhoto + 1,
-                villaRenos[changePhoto].after,
+                "after-button",
+                "before-button",
               )
             }
             className="next-button-right"

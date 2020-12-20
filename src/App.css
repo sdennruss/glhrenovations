@@ -7,6 +7,25 @@
   font-size: 62.5%;
 }
 
+@font-face {
+  font-family: "Wremena-Light";
+  src: url("Wremena-Light.woff2") format("woff2"),
+    url("Wremena-Light.woff") format("woff"),
+    url("Wremena-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Wremena";
+  src: url("Wremena.woff2") format("woff2"), url("Wremena.woff") format("woff"),
+    url("Wremena.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Wremena-Bold";
+  src: url("Wremena-Bold.woff2") format("woff2"),
+    url("Wremena.woff") format("woff"),
+    url("Wremena-Bold.ttf") format("truetype");
+}
+
 img {
   max-width: 100%;
 }
@@ -16,7 +35,26 @@ body {
   padding: 0;
   margin: 0;
   min-height: 100vh;
+  max-height: 100vh;
   overflow-x: hidden;
+}
+
+a {
+  font-family: "Wremena";
+  text-decoration: none;
+  color: black;
+  font-size: 1.6rem;
+}
+
+p {
+  font-family: "Wremena-Light";
+  font-size: 1.5rem;
+  line-height: 1.6;
+}
+
+h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 6rem;
 }
 
 :root {
@@ -44,15 +82,22 @@ body {
   justify-content: center;
   /* background-color: gold; */
   position: fixed;
-  left: 0;
+  z-index: 2;
+  right: 0;
   width: 5%;
   height: 10vh;
   top: 0;
   flex-basis: 5%;
 }
 
+.glh {
+  font-size: unset;
+  text-align: center;
+}
+
 .logo {
   width: 50%;
+  cursor: pointer;
 }
 
 .glh-name {
@@ -60,21 +105,29 @@ body {
   position: fixed;
   justify-content: center;
   align-items: center;
-  /* background-color: honeydew; */
   flex-basis: 90%;
+  z-index: 4;
 }
 
 .company-name {
   font-size: 2rem;
+  opacity: 0.9;
+  letter-spacing: 0.3rem;
   font-family: "Playfair Display", serif;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   font-weight: bolder;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
+
+.company-name:hover {
+  letter-spacing: 0.4rem;
 }
 
 /* Nav */
 
 .hamburger {
-  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -82,12 +135,11 @@ body {
   flex-basis: 5%;
   height: inherit;
   position: fixed;
-  right: 0;
+  left: 0;
   width: 5%;
   top: 0;
   height: 10vh;
   z-index: 10;
-  transform: rotate(-180deg);
 }
 
 input {
@@ -106,11 +158,11 @@ input {
 .open:before {
   content: "";
   background-color: #3c3c3c;
-  width: 1.5rem;
+  width: 1.7rem;
   height: 0.1rem;
   display: block;
   position: relative;
-  top: -0.8rem;
+  top: -0.5rem;
   transform: rotate(0deg);
   transition: all 0.3s ease;
 }
@@ -118,11 +170,11 @@ input {
 .open:after {
   content: "";
   background-color: #3c3c3c;
-  width: 1.5rem;
+  width: 1.7rem;
   height: 0.1rem;
   display: block;
   position: relative;
-  top: 0.8rem;
+  top: 0.5rem;
   transform: rotate(0deg);
   transition: all 0.3s ease;
 }
@@ -142,12 +194,13 @@ input {
 
 @keyframes expand {
   0% {
-    transform: translateX(50%);
+    transform: translateX(-60%);
   }
   100% {
     transform: translateX(0);
   }
 }
+
 @keyframes close {
   0% {
     transform: translateX(0%);
@@ -155,6 +208,17 @@ input {
   100% {
     transform: translateX(100%);
   }
+}
+
+.toggle-trans {
+  background: var(--dominant-color);
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  animation: close 1500ms ease-out forwards;
+  z-index: 4;
 }
 
 .toggle-container {
@@ -172,9 +236,14 @@ input {
 
 .toggle-navigation {
   display: flex;
+  justify-content: space-evenly;
   flex-direction: column;
   height: 100vh;
   background-color: var(--background-color);
+}
+
+#menuToggle {
+  cursor: pointer;
 }
 
 #menuToggle:checked ~ .menuEffects .navigation-list {
@@ -207,6 +276,17 @@ input {
   z-index: 3;
 }
 
+/* .menuExit {
+  background: var(--secondary-color);
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  animation: close 800ms ease-out forwards;
+  z-index: 4;
+} */
+
 #menuToggle:not(:checked) ~ .menuEffects .navigation-list {
   transform: translateY(-30%);
 }
@@ -215,25 +295,105 @@ input {
   list-style: none;
   display: flex;
   align-items: center;
-  flex: 1;
+  position: relative;
+  z-index: 3;
 }
 
 .navigation-items {
   flex: 1;
   display: flex;
   justify-content: center;
+  position: relative;
 }
 
-.toggle-links {
+.toggle-links-Home,
+.toggle-links-Villa.Projects,
+.toggle-links-Contact {
   text-decoration: none;
   color: var(--accent-color-2);
   font-family: "Playfair Display", serif;
   text-transform: uppercase;
-  font-size: 10rem;
+  text-align: center;
+  font-size: 12rem;
   letter-spacing: 0.2rem;
 }
 
+.underline-Home,
+.underline-Villa.Projects,
+.underline-Contact {
+  position: relative;
+  display: block;
+  cursor: pointer;
+}
+
+.underline-Home::before,
+.underline-Villa.Projects::before,
+.underline-Contact::before,
+.underline-Villa.Projects::after,
+.underline-Contact::after,
+.underline-Home::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2.5rem;
+  top: 62%;
+  margin-top: -0.5px;
+  background: #fff;
+  z-index: -2;
+}
+
+.underline-Home::before,
+.underline-Villa.Projects::before,
+.underline-Contact::before {
+  left: -2.5px;
+}
+
+.toggle-links-Home .underline-Home::after,
+.toggle-links-Villa.Projects .underline-Villa.Projects::after,
+.toggle-links-Contact .underline-Contact::after {
+  right: 2.5px;
+  background: #dbdfe4;
+  /* opacity: 0.8; */
+  transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.toggle-links-Home .underline-Home:hover::before,
+.toggle-links-Villa.Projects .underline-Villa.Projects:hover::before,
+.toggle-links-Contact .underline-Contact:hover::before {
+  background: var(--secondary-color);
+  width: 100%;
+  /* opacity: 0.8; */
+  transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.toggle-links-Home .underline-Home:hover::after,
+.toggle-links-Villa.Projects .underline-Villa.Projects:hover::after,
+.toggle-links-Contact .underline-Contact:hover::after {
+  background: transparent;
+  width: 100%;
+  transition: 0s;
+}
+
 /* Landing */
+.expand-transition {
+  background: var(--secondary-color);
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  animation: close 1500ms ease-out forwards;
+  z-index: 4;
+}
+
+@keyframes close {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
 
 .landing-container {
   top: 0;
@@ -242,7 +402,7 @@ input {
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  /* height: 100vh; */
+  animation: transitionIn 1000ms;
 }
 
 .pinterest-contact,
@@ -252,6 +412,7 @@ input {
   align-items: center;
   position: fixed;
   flex-basis: 5%;
+  z-index: 2;
 }
 
 .pinterest-contact {
@@ -262,13 +423,112 @@ input {
   bottom: 0;
 }
 
+.pinterest-account,
+.glh-email {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.pinterest-account:hover,
+.glh-email:hover {
+  letter-spacing: 0.1rem;
+  font-family: "Wremena-Bold";
+}
+
 .canggu-image-container {
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
+  /* flex-direction: column; */
   flex-basis: 90%;
-  min-width: 90%;
+  max-width: 90%;
+}
+
+.pool-div {
+  display: flex;
+  align-items: center;
+}
+
+.reno-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* background-color: lavender; */
+  height: 621px;
+}
+
+.reno-title,
+.reno-description,
+.view-project,
+.reno-location {
+  display: flex;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.reno-title {
+  /* background-color: khaki; */
+  flex-basis: 20%;
+}
+
+.reno {
+  font-size: 6rem;
+  line-height: 1;
+  font-family: "Playfair Display", serif;
+  font-weight: 800;
+  position: relative;
+  text-align: end;
+}
+
+.reno-location {
+  /* background-color: pink; */
+  flex-basis: 15%;
+  align-items: flex-start;
+}
+
+.r-location {
+  font-family: "Playfair Display", serif;
+  text-transform: uppercase;
+  font-size: 4rem;
+  letter-spacing: 1rem;
+  color: var(--dominant-color);
+  opacity: 0.6;
+  font-weight: 600;
+}
+
+.reno-description {
+  flex-basis: 15%;
+  /* background: wheat; */
+  text-align: end;
+}
+
+.r-descrip {
+  line-height: 1.6;
+  font-size: 1.6rem;
+}
+
+.reno-location,
+.view-project {
+  justify-content: flex-end;
+}
+
+.view-canggu {
+  text-decoration: none;
+  cursor: pointer;
+  color: white;
+  text-align: center;
+  background-color: black;
+  font-family: "Wremena";
+  border: 1px solid black;
+  padding: 1.3rem 3rem;
+  border-radius: 4rem;
+  box-shadow: 1px 2px 1px #555;
+}
+
+.view-canggu:hover {
+  /* padding: 1.3rem 3.5rem; */
+  font-weight: 800;
 }
 
 .email-contact {
@@ -285,7 +545,7 @@ input {
   display: flex;
   position: relative;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   height: 100vh;
   top: 0;
   bottom: 0;
@@ -310,29 +570,29 @@ input {
 
 .about-left {
   position: relative;
-  background-color: var(--dominant-color);
-  border-radius: 0 8rem 0 8rem;
   flex-direction: column;
 }
+
 .contractor-name {
   display: flex;
   position: relative;
   justify-content: center;
   align-items: center;
-  flex-basis: 40%;
+  flex-basis: 20%;
 }
+
 .grants-name {
   display: flex;
   flex-direction: column;
   position: relative;
   font-family: "Playfair Display", serif;
   text-transform: uppercase;
-  letter-spacing: 1.4rem;
-  font-size: 10rem;
+  letter-spacing: 1rem;
 }
 
 .underline {
   background: black;
+  text-align: center;
   width: 20%;
   height: 0.1rem;
 }
@@ -340,33 +600,48 @@ input {
 .about-bio {
   display: flex;
   justify-content: center;
+  align-items: center;
   position: relative;
   flex-basis: 60%;
 }
 
 .about-grant {
-  width: 60%;
+  width: 65%;
   font-size: 1.5rem;
-}
-
-.about-right {
-  align-items: center;
-}
-
-.square-border {
-  border: solid 10px black;
-  width: 110%;
-  height: 65vh;
-  right: 0rem;
-  display: flex;
-  position: absolute;
+  text-align: justify;
+  font-family: "Wremena-Light";
 }
 
 .grant-image {
   position: relative;
   display: flex;
-  right: 10rem;
-  width: 95%;
+  align-items: center;
+}
+
+.granite {
+  max-height: 80vh;
+  box-shadow: 4px 4px 5px 2px #555;
+}
+
+.about-button {
+  display: flex;
+  justify-content: center;
+}
+
+.a-button {
+  text-decoration: none;
+  color: black;
+  border-radius: 4rem;
+  border: 1px solid black;
+  padding: 1.5rem 4rem;
+}
+
+.a-button:hover {
+  background-color: black;
+  border: 1px solid black;
+  box-shadow: 1px 2px 5px #555;
+
+  color: white;
 }
 
 /* Services */
@@ -386,6 +661,7 @@ input {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  overflow: hidden;
   width: 90%;
 }
 
@@ -404,7 +680,6 @@ input {
   font-family: "Playfair Display", serif;
   text-transform: uppercase;
   position: relative;
-  font-size: 10rem;
 }
 
 .underline-1 {
@@ -417,81 +692,92 @@ input {
   display: flex;
   position: relative;
   justify-content: center;
+  align-items: center;
   width: 100%;
-  height: 5vh;
+  height: 10vh;
 }
+
+.s-button {
+  border-radius: 4rem;
+  border: 1px solid black;
+  padding: 1.5rem 4rem;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
+
+.s-button:hover {
+  background-color: black;
+  color: white;
+  box-shadow: 1px 2px 5px #555;
+}
+
+/* .square-outline {
+  border: 15px solid var(--dominant-color);
+  position: absolute;
+  transform: rotate(55deg);
+  padding: 50rem;
+  bottom: -80rem;
+  right: 3rem;
+  z-index: -1;
+} */
 
 .cards-container {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   position: relative;
   flex-basis: 50%;
   height: 60vh;
   width: 100%;
 }
 
-.card {
+.card-1,
+.card-2,
+.card-3 {
   display: flex;
   flex-direction: column;
   justify-content: baseline;
+  position: relative;
   flex-basis: 30%;
+}
+
+.card-1,
+.card-3 {
+  background: #dbdfe4;
+  border-radius: 8rem 0rem;
+  box-shadow: -1px 3px 5px #555;
 }
 
 .service-number-1,
 .service-number-2,
-.service-number-3 {
-  display: flex;
-}
-
-.service-description-1,
-.service-description-2,
-.service-description-3 {
-  display: flex;
-}
-
+.service-number-3,
 .service-type-1,
 .service-type-2,
-.service-type-3 {
-  display: flex;
-  position: relative;
-  align-items: center;
-}
-
+.service-type-3,
 .service-description-1,
 .service-description-2,
 .service-description-3 {
-  align-items: flex-start;
-}
-
-.service-number-2,
-.service-type-2,
-.service-description-2 {
+  display: flex;
   justify-content: center;
 }
 
-.service-number-3,
-.service-type-3,
-.service-description-3 {
-  justify-content: flex-end;
-}
-
 .s-number {
-  font-size: 11rem;
+  font-size: 9rem;
   font-family: "Playfair Display", serif;
-  color: var(--secondary-color);
   opacity: 0.8;
 }
 
 .s-type {
-  font-size: 1.5rem;
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 0.2rem;
+  font-family: "Wremena-Bold";
+  font-weight: 800;
 }
+
 .s-description {
-  font-size: 1rem;
-  width: 80%;
-  text-align: justify;
+  padding: 2rem;
+  font-family: "Wremena-Light";
 }
 
 /* Before After */
@@ -526,24 +812,36 @@ input {
   width: 90%;
 }
 
-.villa-name-container,
+.before-after-title .villa-name-container,
 .next-button-container {
   position: relative;
   display: flex;
   flex: 1;
 }
 
+.b-a-title {
+  flex: 1;
+  position: absolute;
+  font-family: "Playfair Display", serif;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
 .villa-name-container {
-  padding-bottom: 5rem;
+  padding-top: 5rem;
 }
 
 .villa-name {
   position: absolute;
+  top: 7rem;
+  text-transform: capitalize;
+  font-size: 3.5rem;
+  font-family: "Playfair Display", serif;
   text-transform: uppercase;
-  font-size: 10rem;
+  color: var(--dominant-color);
   width: 90%;
-  /* background: pink; */
-  left: 2%;
+  font-weight: 600;
+  opacity: 0.6;
   z-index: 2;
 }
 
@@ -568,25 +866,21 @@ input {
 .before-button,
 .after-button {
   position: relative;
-  font-size: 1.4rem;
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 6rem;
   color: white;
-  padding: 1rem;
+  padding: 1.5rem 2rem;
   cursor: pointer;
-  left: 8%;
+  left: 7%;
+  font-family: "Wremena";
 }
 
 .see-villa-button {
   background-color: black;
   border-radius: 4rem 0 0 4rem;
-}
-
-.see-villa-button:hover {
-  background: var(--dominant-color);
 }
 
 .before-button {
@@ -595,14 +889,54 @@ input {
   background: #000;
 }
 
-.before-button:hover,
-.after-button:hover {
-  border-left: 1px solid #000;
+.go-green {
   background-color: var(--dominant-color);
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 6rem;
+  color: white;
+  padding: 1.5rem 2rem;
+  cursor: pointer;
+  left: 7%;
+}
+
+.go-green-after {
+  border-radius: 0 4rem 4rem 0;
+  background-color: var(--accent-color-2);
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 6rem;
+  color: white;
+  padding: 1.5rem 2rem;
+
+  cursor: pointer;
+  left: 7%;
+}
+
+.before-button:hover,
+.after-button:hover,
+.go-green-after:hover,
+.see-villa-button:hover {
+  background-color: var(--dominant-color);
+}
+
+.see-villa-button {
+  text-decoration: none;
 }
 .after-button {
   border-radius: 0 4rem 4rem 0;
   background-color: var(--dominant-color);
+}
+
+.after-button:hover,
+.go-green-after:hover {
+  border-left: 1px solid #000;
 }
 
 .villa-image-container {
@@ -617,6 +951,7 @@ input {
 .villa-image {
   max-width: 80%;
   max-height: 80vh;
+  /* opacity: 0.9; */
 }
 
 .next-button-container {
@@ -658,6 +993,45 @@ input {
 
 /* Sidebar */
 
+.preview-arrows {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  bottom: 0rem;
+  top: 0rem;
+}
+.pl-arrow,
+.pr-arrow {
+  display: flex;
+  position: absolute;
+  z-index: 2;
+  color: white;
+  max-width: 5%;
+  font-size: 1.5rem;
+  letter-spacing: 0.1rem;
+  width: 15%;
+  cursor: pointer;
+}
+
+.pl-arrow:hover,
+.pr-arrow:hover {
+  letter-spacing: 0.4rem;
+}
+
+.pl-arrow {
+  left: 1rem;
+}
+
+.pr-arrow {
+  right: 0rem;
+}
+
+.prev-arrow {
+  cursor: pointer;
+}
+
 .preview-container {
   display: flex;
   position: relative;
@@ -666,43 +1040,352 @@ input {
   width: 100%;
 }
 
+.villa-card-tumbak.bayuh,
+.villa-card-cemagi,
+.villa-card-loft,
+.villa-card-alive {
+  position: relative;
+  overflow: hidden;
+}
+
+/* .villa-card-alive {
+  display: none;
+} */
+
+.villa-card-middle {
+  margin: 0 1rem;
+}
+
+.preview-image-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.side-bar {
+  display: flex;
+  justify-content: center;
+}
+
 .preview-card,
-.sub-link-container,
+.sub-link-tumbak.bayuh,
+.sub-link-cemagi,
+.sub-link-loft,
+.sub-link-alive,
 .villa-details-container {
   display: flex;
   position: relative;
   width: 90%;
 }
 
-.villa-links,
-.villa-content-details {
-  flex-basis: 33.3%;
+.preview-card {
+  height: 78vh;
 }
 
-.cemagi-container,
+.sidebar,
+.details-outer,
+.villa-details-container {
+  height: 6vh;
+}
+
+.sub-link-tumbak.bayuh,
+.sub-link-cemagi,
+.sub-link-loft,
+.sub-link-alive {
+  width: 30%;
+}
+
+.sub-link-cemagi {
+  padding: 0 1rem;
+}
+
+.villa-links {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.villa-tumbak.bayuh,
+.villa-cemagi,
+.villa-loft,
+.villa-alive {
+  position: relative;
+  text-decoration: none;
+  color: black;
+  text-transform: capitalize;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.2rem;
+  opacity: 0.8;
+  font-size: 2rem;
+  padding: 1rem 0 0.5rem 0;
+}
+
+.villa-tumbak.bayuh .villa-underline,
+.villa-cemagi .villa-underline,
+.villa-alive .villa-underline,
+.villa-loft .villa-underline {
+  width: 100%;
+  height: 1rem;
+  position: absolute;
+  text-align: center;
+  top: 2rem;
+  background-color: #d4dce7;
+  z-index: -1;
+}
+
+.villa-tumbak.bayuh:hover,
+.villa-cemagi:hover,
+.villa-loft:hover {
+  letter-spacing: 0.3rem;
+}
+
+.villa-card,
+.villa-card-middle {
+  display: flex;
+  animation: transitionIn 500ms;
+}
+
+@keyframes transitionIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 2;
+  }
+}
+
+.details-outer {
+  display: flex;
+  justify-content: center;
+}
+
+.villa-content-details,
+.villa-description,
+.villa-availability {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.villa-description,
+.villa-availability {
+  font-size: 1.5rem;
+}
+
+.villa .cemagi-container,
 .tb-container,
-.loft-container {
+.c-container .loft-container {
   height: 100vh;
   display: flex;
+  position: relative;
   justify-content: center;
   align-items: center;
   width: 100%;
-  z-index: -1;
 }
 
 .cemagi-container {
   background-color: lavender;
 }
 
-.tb-container {
-  background-color: lemonchiffon;
-}
-
 .loft-container {
   background-color: lightblue;
 }
 
+.up-arrow {
+  transform: rotate(90deg);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: fixed;
+  cursor: pointer;
+  flex-basis: 100%;
+  height: 10vh;
+  bottom: 45%;
+  right: 2rem;
+  z-index: 2;
+}
+
+.up {
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
+
+.up-arrow:hover {
+  letter-spacing: 0.1rem;
+  right: 1.5rem;
+}
 /* Tumbak Bayuh SubLink */
+
+.tb-container {
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.tb-gallery-1,
+.tb-gallery-2 {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  width: 90%;
+}
+
+.tb-gallery-1 {
+  height: 100vh;
+  align-items: center;
+}
+
+.tb-image-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-basis: 70%;
+  max-height: 100vh;
+}
+
+.tb-image {
+  /* max-height: 100vh; */
+}
+
+.tb-content-container {
+  position: relative;
+  flex-basis: 30%;
+  height: 78.5vh;
+  background: #d4dce7;
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.tumbak,
+.cemagi {
+  font-size: 3rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+}
+
+.tb-location {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.tb {
+  position: relative;
+  font-family: "Playfair Display", serif;
+  text-transform: uppercase;
+  font-size: 15rem;
+  bottom: -30rem;
+}
+
+.tb-container-2,
+.tb-container-3 {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* background-color: lightcoral; */
+  width: 100%;
+  min-height: 100vh;
+}
+
+.tb-gallery-2,
+.tb-gallery-3 {
+  /* background-color: var(--dominant-color); */
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.gallery-top-container,
+.gallery-bottom-container {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.gallery-top-container {
+  margin-bottom: 1rem;
+}
+
+.top-l-image-container,
+.top-r-image-container,
+.bottom-r-image-container,
+.bottom-c-image-container,
+.left-content-container,
+.center-content-container {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.top-l-image-container,
+.bottom-r-image-container {
+  margin: 0 1rem;
+}
+
+.left-content-container {
+  background-color: var(--dominant-color);
+  opacity: 0.9;
+}
+
+.center-content-container {
+  background-color: #d4dce7;
+}
+
+.tb-container-3 {
+  justify-content: flex-end;
+}
+
+.tb-gallery-3 {
+  /* background-color: khaki; */
+  width: 90%;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.main-image-container,
+.sub-container,
+.sub-image-container {
+  display: flex;
+}
+
+.main-image-container {
+  flex-basis: 60%;
+}
+
+.sub-container {
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex-basis: 60%;
+}
+
+.sub-image-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.sub-image {
+  width: 98%;
+}
+.sub-content-container {
+  margin-top: 1rem;
+  display: flex;
+  height: 15vh;
+  width: 100%;
+  background-color: var(--dominant-color);
+  opacity: 0.9;
+}
 
 @media (max-width: 768px) {
   .about-container {
@@ -713,5 +1396,9 @@ input {
     max-width: 100%;
     min-width: 100%;
     /* max-height: 70vh; */
+  }
+
+  .tb-content-container {
+    height: 26.5vh;
   }
 }

@@ -7,6 +7,7 @@ import tumbakBefore from "./assets/tumbakbefore.jpg";
 import villaPreview1 from "./assets/previewtumbak.jpg";
 import villaPreview2 from "./assets/previewcemagi.jpg";
 import villaPreview3 from "./assets/previewloft.jpg";
+import villaPreview4 from "./assets/previewalive.jpg";
 
 export const villaRenos = [
   {
@@ -38,5 +39,13 @@ export const villaRenos = [
     description: "Industrial Lost ",
     availability: "For Sale",
     villaPreview: villaPreview3,
+  },
+  {
+    id: 4,
+    villa: "alive",
+    seeVilla: "alive",
+    description: "Health & Wellness Organic Shop ",
+    availability: "Contract Work",
+    villaPreview: villaPreview4,
   },
 ];

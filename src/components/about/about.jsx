@@ -1,5 +1,6 @@
 import React from "react";
-import GrantPic from "./Granite-1.jpg";
+import { Link } from "react-router-dom";
+import GrantPic from "./Grant.jpg";
 
 const About = () => {
   return (
@@ -24,10 +25,13 @@ const About = () => {
                 classical literature, discovered the undoubtable source. Lorem
               </p>
             </div>
+
+            <div className="about-button">
+              <Link className="a-button">Learn More</Link>
+            </div>
           </div>
 
           <div className="about-right">
-            <div className="square-border"></div>
             <div className="grant-image">
               <img className="granite" src={GrantPic} />
             </div>

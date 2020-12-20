@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import NavBar from "../navbar/navbar";
 import Logo from "./glhlogo.png";
 
@@ -8,14 +9,6 @@ const Header = () => {
   return (
     <React.Fragment>
       <div className="header-container">
-        <div className="glh-logo">
-          <img className="logo" src={Logo} />
-        </div>
-
-        <div className="glh-name">
-          <h1 className="company-name">GLH Renovations</h1>
-        </div>
-
         <div className="hamburger">
           <input
             onClick={() => setExpand(!expand)}
@@ -28,6 +21,18 @@ const Header = () => {
           <label htmlFor="menuToggle" className="menuOpen">
             <div className="open"></div>
           </label>
+        </div>
+
+        <div className="glh-name">
+          <Link to="/home" className="grant-huddo">
+            <h1 className="company-name">Renovations and Designs</h1>
+          </Link>
+        </div>
+
+        <div className="glh-logo">
+          <Link to="/home" className="glh">
+            <img className="logo" src={Logo} />
+          </Link>
         </div>
       </div>
       {expand && <NavBar onToggle={setExpand} expand={expand} />}

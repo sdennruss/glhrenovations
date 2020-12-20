@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Cards from "./cards";
 
 const Services = () => {
@@ -13,7 +14,9 @@ const Services = () => {
           </div>
           <Cards />
           <div className="services-button-container">
-            <a className="s-button">Get in Touch</a>
+            <Link to="/contact" className="s-button">
+              Get in Touch
+            </Link>
           </div>
         </div>
       </div>

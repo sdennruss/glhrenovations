@@ -1,21 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { villaRenos } from "./beforeAfters";
 
-const SideBar = () => {
+const SideBar = ({ seeVilla, villa }) => {
   return (
     <React.Fragment>
-      <div className="sub-link-container">
-        {villaRenos.map((location) => (
-          <div className="villa-links">
-            <Link
-              to={`/Villa Projects/${location.seeVilla}`}
-              className="villas"
-            >
-              {location.villa}
-            </Link>
-          </div>
-        ))}
+      <div className={`sub-link-${villa}`}>
+        <div className="villa-links">
+          <Link to={`/Villa Projects/${seeVilla}`} className={`villa-${villa}`}>
+            <span className="villa-underline"></span>
+            {villa}
+          </Link>
+        </div>
       </div>
     </React.Fragment>
   );
