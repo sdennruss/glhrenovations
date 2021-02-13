@@ -2,10 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import GrantPic from "./Grant.jpg";
 
-const About = () => {
+const About = ({ scrollRef, handleServiceScroll }) => {
   return (
     <React.Fragment>
-      <div className="about-container">
+      <div ref={scrollRef} className="about-container">
         <div className="about-column">
           <div className="about-left">
             <div className="contractor-name">
@@ -16,17 +16,20 @@ const About = () => {
 
             <div className="about-bio">
               <p className="about-grant">
-                Contrary to popular belief, Lorem Ipsum is not simply random
-                text. It has roots in a piece of classical Latin literature from
-                45 BC, making it over 2000 years old. Richard McClintock, a
-                Latin professor at Hampden-Sydney College in Virginia, looked up
-                one of the more obscure Latin words, consectetur, from a Lorem
-                Ipsum passage, and going through the cites of the word in
-                classical literature, discovered the undoubtable source. Lorem
+                Aussie born, Bali based with 20 years of work experience as an
+                eletrician. Touched on other trades such as plumbing and
+                building which led to house design and renovations in Bali.
+              </p>
+
+              <p className="about-grant-2">
+                With over 6 years of trial and tribulations, dodgey land offers,
+                and finding my own suppliers, and workers, I'm now offering my
+                services as a Contractor to help those looking to turn their
+                concepts into reality and avoid bule pricing.
               </p>
             </div>
 
-            <div className="about-button">
+            <div onClick={handleServiceScroll} className="about-button">
               <Link className="a-button">Learn More</Link>
             </div>
           </div>

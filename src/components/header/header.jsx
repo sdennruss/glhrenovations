@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import NavBar from "../navbar/navbar";
-import Logo from "./glhlogo.png";
+import Logo from "./glhlogocircular.png";
 
 const Header = () => {
   const [expand, setExpand] = useState(false);

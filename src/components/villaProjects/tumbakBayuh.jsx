@@ -6,6 +6,7 @@ import tumbak4 from "./assets/tumbak4.jpg";
 import tumbak5 from "./assets/tumbak5.jpg";
 import tumbak6 from "./assets/tumbak6.jpg";
 import tumbak7 from "./assets/tumbak7.jpg";
+import tumbak8 from "./assets/tumbak8.jpg";
 
 const TumbakBayuh = () => {
   return (
@@ -22,13 +23,12 @@ const TumbakBayuh = () => {
 
             <div className="tb-details">
               <p className="t-details">
-                Australian born with an electrical background based in Bali
-                discovering abandoned homes and shops and turning them into dime
-                in a dozens for rental property purposes and popular health food
-                stores such as the Alive Wholefoods Store located in Canggu,
-                Bali. With almost 9 years renovating and desinging spaces, I’ve
-                diversiveif myself as a One Man Show show tackling interior
-                decorating, plumbing, and eletrical work.{" "}
+                A villa with all the fixings if you're looking to escape your
+                typical Bali house. The pairing of wooden pieces and metal
+                fixings made this villa come together where modern meets
+                industrial. This residential area is where families and
+                individuals flock to for more peace and quiet. The photo's below
+                highlight the duo in every inch of the villa.
               </p>
             </div>
           </div>
@@ -41,7 +41,26 @@ const TumbakBayuh = () => {
         <div className="tb-gallery-2">
           <div className="gallery-top-container">
             <div className="center-content-container">
-              <p className="center-content">Center content</p>
+              <p className="villa-features">Villa Features</p>
+              <ul className="content-ul">
+                <li className="center-content">3 bedrooms + 3.5 bathrooms</li>
+                <li className="center-content">
+                  Open space concept on the main floor that flows into the
+                  dining room, office space, living room area, and kitchen.
+                  Great for entertaining
+                </li>
+
+                <li className="center-content">
+                  Equipped kitchen with an oven and a deep double sink
+                </li>
+                <li className="center-content">
+                  Outdoor pool with a sunbathing deck and outdoor shaded seating
+                  area
+                </li>
+                <li className="center-content">
+                  Lush green garden area surrounding the pool
+                </li>
+              </ul>
             </div>
             <div className="top-l-image-container">
               <img className="l-image" src={tumbak2} />
@@ -59,7 +78,7 @@ const TumbakBayuh = () => {
               <img className="br-image" src={tumbak5} />
             </div>
             <div className="left-content-container">
-              <p classNae="left-content">left content</p>
+              <img className="br-image" src={tumbak8} />
             </div>
           </div>
         </div>
@@ -75,7 +94,13 @@ const TumbakBayuh = () => {
             </div>
 
             <div className="sub-content-container">
-              <p>sub-container</p>
+              <p className="sub-content">
+                The master bedroom features an open-space ensuite that looks out
+                to a reading nook and king size bed. The perfect space for a
+                good nights rest as blackout curtains have been installed. Views
+                of Mount Batur can be seen if the clouds are on their best
+                behaviour.{" "}
+              </p>
             </div>
           </div>
         </div>

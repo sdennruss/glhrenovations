@@ -8,6 +8,7 @@ import villaPreview1 from "./assets/previewtumbak.jpg";
 import villaPreview2 from "./assets/previewcemagi.jpg";
 import villaPreview3 from "./assets/previewloft.jpg";
 import villaPreview4 from "./assets/previewalive.jpg";
+import villaPreview5 from "./assets/previewcanggu.jpg";
 
 export const villaRenos = [
   {
@@ -17,7 +18,7 @@ export const villaRenos = [
     after: tumbakAfter,
     seeVilla: "tumbakbayuh",
     description: "Modern Meets Industrial",
-    availability: "For Sale",
+    availability: "",
     villaPreview: villaPreview1,
   },
   {
@@ -27,7 +28,7 @@ export const villaRenos = [
     after: cemagiAfter,
     seeVilla: "cemagi",
     description: "Bohiemian Rustic",
-    availability: "For Sale",
+    availability: "",
     villaPreview: villaPreview2,
   },
   {
@@ -37,7 +38,7 @@ export const villaRenos = [
     after: loftAfter,
     seeVilla: "loft",
     description: "Industrial Lost ",
-    availability: "For Sale",
+    availability: "",
     villaPreview: villaPreview3,
   },
   {
@@ -45,7 +46,15 @@ export const villaRenos = [
     villa: "alive",
     seeVilla: "alive",
     description: "Health & Wellness Organic Shop ",
-    availability: "Contract Work",
+    availability: "",
     villaPreview: villaPreview4,
+  },
+  {
+    id: 5,
+    villa: "canggu",
+    seeVilla: "canggu",
+    description: "Bali Aesthetics ",
+    availability: "",
+    villaPreview: villaPreview5,
   },
 ];

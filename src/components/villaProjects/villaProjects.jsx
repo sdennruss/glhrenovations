@@ -8,17 +8,18 @@ import Cemagi from "./cemagi";
 import Loft from "./loft";
 import TumbakBayuh from "./tumbakBayuh";
 import Alive from "./alive";
+import Canggu from "./canggu";
 
 const VillaProjects = () => {
   const [nextArrow, setNextArrow] = useState(0);
 
   const handleNextArrow = (next) => {
-    setNextArrow(next);
+    next === 3 ? setNextArrow(0) : setNextArrow(next);
     console.log(next);
   };
 
   const handleBackArrow = (back) => {
-    back === -1 ? setNextArrow(0) : setNextArrow(back);
+    back === -1 ? setNextArrow(2) : setNextArrow(back);
     console.log(back);
   };
 
@@ -28,46 +29,48 @@ const VillaProjects = () => {
         <div className="preview-card">
           <div className={`villa-card`}>
             <VillaPreview villaPrev={villaRenos[nextArrow].villaPreview} />
+            <SideBar
+              seeVilla={villaRenos[nextArrow].seeVilla}
+              villa={villaRenos[nextArrow].villa}
+            />
+            <Description description={villaRenos[nextArrow].description} />
           </div>
           <div className={`villa-card-middle`}>
             <VillaPreview villaPrev={villaRenos[nextArrow + 1].villaPreview} />
+            <SideBar
+              seeVilla={villaRenos[nextArrow + 1].seeVilla}
+              villa={villaRenos[nextArrow + 1].villa}
+            />
+            <Description description={villaRenos[nextArrow + 1].description} />
           </div>
           <div className={`villa-card`}>
             <VillaPreview villaPrev={villaRenos[nextArrow + 2].villaPreview} />
+            <SideBar
+              seeVilla={villaRenos[nextArrow + 2].seeVilla}
+              villa={villaRenos[nextArrow + 2].villa}
+            />
+            <Description description={villaRenos[nextArrow + 2].description} />
           </div>
           <div className="preview-arrows">
             <p
               onClick={() => handleBackArrow(nextArrow - 1)}
               className="pl-arrow"
-            >{`{back}`}</p>
+            >
+              <i className="fa fa-arrow-circle-left" aria-hidden="true"></i>
+            </p>
             <p
-              onClick={() => handleNextArrow(+1)}
+              onClick={() => handleNextArrow(nextArrow + 1)}
               className="pr-arrow"
-            >{`{next}`}</p>
+            >
+              <i className="fa fa-arrow-circle-right" aria-hidden="true"></i>
+            </p>
           </div>
         </div>
       </div>
       <div className="up-arrow">
         <Link className="up" to="/Villa Projects">
-          Scroll Up
+          Top
         </Link>
-      </div>
-      <div className="side-bar">
-        <SideBar
-          seeVilla={villaRenos[nextArrow].seeVilla}
-          villa={villaRenos[nextArrow].villa}
-        />
-        <SideBar
-          seeVilla={villaRenos[nextArrow + 1].seeVilla}
-          villa={villaRenos[nextArrow + 1].villa}
-        />
-        <SideBar
-          seeVilla={villaRenos[nextArrow + 2].seeVilla}
-          villa={villaRenos[nextArrow + 2].villa}
-        />
-      </div>
-      <div className="details-outer">
-        <Description villa={villaRenos} nextArrow={nextArrow} />{" "}
       </div>
 
       <Route
@@ -85,6 +88,10 @@ const VillaProjects = () => {
       <Route
         path="/Villa Projects/alive"
         render={(props) => <Alive {...props} />}
+      />
+      <Route
+        path="/Villa Projects/canggu"
+        render={(props) => <Canggu {...props} />}
       />
     </React.Fragment>
   );

@@ -39,7 +39,7 @@ const ProjectDetails = () => {
     setGoGreen(black);
     setGoGreenAfter(green);
 
-    console.log("before button clicked");
+    console.log("after button clicked");
   };
 
   return (
@@ -60,36 +60,38 @@ const ProjectDetails = () => {
           </div>
 
           <div className="villa-button-container">
-            <Link
-              to={`/Villa Projects/${villaRenos[changePhoto].seeVilla}`}
-              className="see-villa-button"
-            >
-              See Villa
-            </Link>
-            <a
-              onClick={() =>
-                handleBeforePhoto(
-                  villaRenos[changePhoto].before,
-                  "go-green",
-                  "go-green-after ",
-                )
-              }
-              className={goGreen}
-            >
-              Before
-            </a>
-            <a
-              onClick={() =>
-                handleAfterPhoto(
-                  villaRenos[changePhoto].after,
-                  "before-button",
-                  "after-button",
-                )
-              }
-              className={goGreenAfter}
-            >
-              After
-            </a>
+            <div className="button-inner">
+              <Link
+                to={`/Villa Projects/${villaRenos[changePhoto].seeVilla}`}
+                className="see-villa-button"
+              >
+                See Villa
+              </Link>
+              <a
+                onClick={() =>
+                  handleBeforePhoto(
+                    villaRenos[changePhoto].before,
+                    "go-green",
+                    "go-green-after ",
+                  )
+                }
+                className={goGreen}
+              >
+                Before
+              </a>
+              <a
+                onClick={() =>
+                  handleAfterPhoto(
+                    villaRenos[changePhoto].after,
+                    "before-button",
+                    "after-button",
+                  )
+                }
+                className={goGreenAfter}
+              >
+                After
+              </a>
+            </div>
           </div>
         </div>
 

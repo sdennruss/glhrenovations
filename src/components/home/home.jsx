@@ -11,12 +11,18 @@ const Home = () => {
     scrollRef.current.scrollIntoView({ behavior: "smooth" });
   }
 
+  const serviceRef = useRef();
+
+  function handleServiceScroll() {
+    serviceRef.current.scrollIntoView({ behavior: "smooth" });
+  }
+
   return (
     <React.Fragment>
       <LandingPage handleScroll={handleScroll} />
-      <About />
-      <Services />
-      <ProjectCards scrollRef={scrollRef} />
+      <About handleServiceScroll={handleServiceScroll} scrollRef={scrollRef} />
+      <Services serviceRef={serviceRef} />
+      <ProjectCards />
     </React.Fragment>
   );
 };

@@ -48,7 +48,7 @@ a {
 
 p {
   font-family: "Wremena-Light";
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   line-height: 1.6;
 }
 
@@ -83,10 +83,9 @@ h2 {
   /* background-color: gold; */
   position: fixed;
   z-index: 2;
-  right: 0;
   width: 5%;
-  height: 10vh;
-  top: 0;
+  right: 1rem;
+  /* height: 10vh; */
   flex-basis: 5%;
 }
 
@@ -96,7 +95,7 @@ h2 {
 }
 
 .logo {
-  width: 50%;
+  width: 70%;
   cursor: pointer;
 }
 
@@ -403,6 +402,7 @@ input {
   align-items: center;
   overflow: hidden;
   animation: transitionIn 1000ms;
+  height: 80vh;
 }
 
 .pinterest-contact,
@@ -440,7 +440,6 @@ input {
   justify-content: center;
   align-items: center;
   position: relative;
-  /* flex-direction: column; */
   flex-basis: 90%;
   max-width: 90%;
 }
@@ -448,6 +447,8 @@ input {
 .pool-div {
   display: flex;
   align-items: center;
+  width: 3000px;
+  height: 621px;
 }
 
 .reno-container {
@@ -534,7 +535,7 @@ input {
 .email-contact {
   transform: rotate(90deg);
   right: 0;
-  width: 5%;
+  width: 6.5%;
   bottom: 0;
   height: 90vh;
 }
@@ -571,6 +572,7 @@ input {
 .about-left {
   position: relative;
   flex-direction: column;
+  justify-content: center;
 }
 
 .contractor-name {
@@ -578,7 +580,6 @@ input {
   position: relative;
   justify-content: center;
   align-items: center;
-  flex-basis: 20%;
 }
 
 .grants-name {
@@ -586,7 +587,6 @@ input {
   flex-direction: column;
   position: relative;
   font-family: "Playfair Display", serif;
-  text-transform: uppercase;
   letter-spacing: 1rem;
 }
 
@@ -600,16 +600,23 @@ input {
 .about-bio {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   position: relative;
-  flex-basis: 60%;
+  flex-basis: 50%;
 }
 
-.about-grant {
+.about-grant,
+.about-grant-2,
+.twenty-years {
   width: 65%;
-  font-size: 1.5rem;
   text-align: justify;
   font-family: "Wremena-Light";
+  font-size: 1.6rem;
+}
+
+.about-grant-2 {
+  padding-top: 2rem;
 }
 
 .grant-image {
@@ -678,7 +685,6 @@ input {
   display: flex;
   flex-direction: column;
   font-family: "Playfair Display", serif;
-  text-transform: uppercase;
   position: relative;
 }
 
@@ -727,7 +733,7 @@ input {
   justify-content: center;
   position: relative;
   flex-basis: 50%;
-  height: 60vh;
+  height: 65vh;
   width: 100%;
 }
 
@@ -753,12 +759,18 @@ input {
 .service-number-3,
 .service-type-1,
 .service-type-2,
-.service-type-3,
+.service-type-3 {
+  display: flex;
+  justify-content: center;
+  flex-basis: 20%;
+}
+
 .service-description-1,
 .service-description-2,
 .service-description-3 {
   display: flex;
   justify-content: center;
+  flex-basis: 60%;
 }
 
 .s-number {
@@ -776,8 +788,10 @@ input {
 }
 
 .s-description {
-  padding: 2rem;
+  padding: 1rem;
   font-family: "Wremena-Light";
+  width: 85%;
+  text-align: center;
 }
 
 /* Before After */
@@ -823,7 +837,6 @@ input {
   flex: 1;
   position: absolute;
   font-family: "Playfair Display", serif;
-  text-transform: uppercase;
   z-index: 2;
 }
 
@@ -860,6 +873,11 @@ input {
   width: 30%;
   flex: 1;
   bottom: 2rem;
+}
+
+.button-inner {
+  display: flex;
+  width: 100%;
 }
 
 .see-villa-button,
@@ -1001,6 +1019,7 @@ input {
   width: 100%;
   bottom: 0rem;
   top: 0rem;
+  height: 42vh;
 }
 .pl-arrow,
 .pr-arrow {
@@ -1009,23 +1028,24 @@ input {
   z-index: 2;
   color: white;
   max-width: 5%;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
+  opacity: 0.8;
   letter-spacing: 0.1rem;
-  width: 15%;
   cursor: pointer;
 }
 
 .pl-arrow:hover,
 .pr-arrow:hover {
-  letter-spacing: 0.4rem;
+  font-size: 3rem;
+  opacity: 1;
 }
 
 .pl-arrow {
-  left: 1rem;
+  left: 1.5rem;
 }
 
 .pr-arrow {
-  right: 0rem;
+  right: 1.5rem;
 }
 
 .prev-arrow {
@@ -1040,17 +1060,22 @@ input {
   width: 100%;
 }
 
-.villa-card-tumbak.bayuh,
+/* .villa-card-tumbak.bayuh,
 .villa-card-cemagi,
 .villa-card-loft,
 .villa-card-alive {
   position: relative;
   overflow: hidden;
-}
+} */
 
 /* .villa-card-alive {
   display: none;
 } */
+
+.villa-card,
+.villa-card-middle {
+  flex-direction: column;
+}
 
 .villa-card-middle {
   margin: 0 1rem;
@@ -1059,6 +1084,11 @@ input {
 .preview-image-container {
   position: relative;
   overflow: hidden;
+  width: 100%;
+}
+
+.preview-image {
+  width: 100%;
 }
 
 .side-bar {
@@ -1066,7 +1096,6 @@ input {
   justify-content: center;
 }
 
-.preview-card,
 .sub-link-tumbak.bayuh,
 .sub-link-cemagi,
 .sub-link-loft,
@@ -1074,29 +1103,29 @@ input {
 .villa-details-container {
   display: flex;
   position: relative;
-  width: 90%;
 }
 
 .preview-card {
-  height: 78vh;
+  width: 90%;
+  display: flex;
+  position: relative;
 }
 
-.sidebar,
-.details-outer,
-.villa-details-container {
-  height: 6vh;
+.preview-card {
+  height: 85vh;
 }
 
-.sub-link-tumbak.bayuh,
+/* .sub-link-tumbak.bayuh,
 .sub-link-cemagi,
 .sub-link-loft,
-.sub-link-alive {
+.sub-link-alive,
+.sub-link-canggu {
   width: 30%;
-}
+} */
 
-.sub-link-cemagi {
+/* .sub-link-cemagi {
   padding: 0 1rem;
-}
+} */
 
 .villa-links {
   display: flex;
@@ -1107,7 +1136,8 @@ input {
 .villa-tumbak.bayuh,
 .villa-cemagi,
 .villa-loft,
-.villa-alive {
+.villa-alive,
+.villa-canggu {
   position: relative;
   text-decoration: none;
   color: black;
@@ -1123,7 +1153,8 @@ input {
 .villa-tumbak.bayuh .villa-underline,
 .villa-cemagi .villa-underline,
 .villa-alive .villa-underline,
-.villa-loft .villa-underline {
+.villa-loft .villa-underline,
+.villa-canggu .villa-underline {
   width: 100%;
   height: 1rem;
   position: absolute;
@@ -1135,7 +1166,9 @@ input {
 
 .villa-tumbak.bayuh:hover,
 .villa-cemagi:hover,
-.villa-loft:hover {
+.villa-loft:hover,
+.villa-alive:hover,
+.villa-canggu:hover {
   letter-spacing: 0.3rem;
 }
 
@@ -1143,6 +1176,7 @@ input {
 .villa-card-middle {
   display: flex;
   animation: transitionIn 500ms;
+  width: 100%;
 }
 
 @keyframes transitionIn {
@@ -1160,8 +1194,7 @@ input {
 }
 
 .villa-content-details,
-.villa-description,
-.villa-availability {
+.villa-description {
   display: flex;
   position: relative;
   flex-direction: column;
@@ -1169,8 +1202,7 @@ input {
   width: 100%;
 }
 
-.villa-description,
-.villa-availability {
+.villa-description {
   font-size: 1.5rem;
 }
 
@@ -1259,12 +1291,33 @@ input {
   flex-direction: column;
 }
 
+.tb-description,
+.tb-details {
+  display: flex;
+}
+
+.tb-description {
+  flex: 1;
+  align-items: center;
+}
+
+.tb-details {
+  flex: 3;
+  justify-content: center;
+}
+
+.t-details {
+  width: 90%;
+  text-align: justify;
+}
+
 .tumbak,
 .cemagi {
   font-size: 3rem;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.3rem;
+  width: 100%;
 }
 
 .tb-location {
@@ -1332,12 +1385,52 @@ input {
 }
 
 .left-content-container {
+  flex-direction: column;
   background-color: var(--dominant-color);
   opacity: 0.9;
 }
 
 .center-content-container {
   background-color: #d4dce7;
+  flex-direction: column;
+}
+
+.villa-features {
+  font-weight: 800;
+  text-transform: uppercase;
+  flex-direction: column;
+  margin-top: 1rem;
+  flex: 0.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-ul {
+  margin-left: 3rem;
+  flex: 2;
+}
+
+.center-content {
+  font-family: "Wremena-Light";
+  font-size: 1.6rem;
+  line-height: 1.6;
+  word-wrap: normal;
+}
+
+.sub-content {
+  margin: 1rem;
+  display: flex;
+  align-items: center;
+  text-align: justify;
+  flex: 1;
+}
+
+.sub-content-2 {
+  margin: 1rem;
+  display: flex;
+  text-align: justify;
+  flex: 1;
 }
 
 .tb-container-3 {
@@ -1388,17 +1481,439 @@ input {
 }
 
 @media (max-width: 768px) {
+  h2 {
+    font-size: 4rem;
+  }
+
+  .hamburger {
+    left: 2%;
+    width: unset;
+  }
+
+  .glh-logo {
+    width: 10%;
+    top: 2.1rem;
+    right: 1.1rem;
+  }
+
+  .glh {
+    text-align: right;
+  }
+
+  .logo {
+    width: 60%;
+  }
+
+  .company-name {
+    font-size: 1.6rem;
+  }
+
+  .toggle-links-Home,
+  .toggle-links-Villa.Projects,
+  .toggle-links-Contact {
+    font-size: 6rem;
+  }
+
+  .pinterest-contact {
+    height: 100vh;
+    left: 1rem;
+  }
+
+  .email-contact {
+    height: 100vh;
+    right: 0.5rem;
+  }
+
+  .canggu-image-container {
+    flex-direction: column;
+  }
+  .landing-container {
+    height: 90vh;
+  }
+
+  .pool-div {
+    width: unset;
+    height: unset;
+    justify-content: center;
+  }
+
+  .canggu-pool {
+    max-width: 90%;
+  }
+  .reno-container {
+    height: unset;
+    position: relative;
+    top: 2rem;
+    /* margin: 1rem; */
+  }
+
+  .reno-title {
+    display: none;
+  }
+
+  .reno-location {
+    position: absolute;
+    bottom: 40rem;
+    padding: 1.5rem;
+  }
+
+  .reno-description {
+    top: 2rem;
+    width: 95%;
+    /* padding: 0; */
+  }
+
+  .r-descrip {
+    font-size: 2rem;
+  }
+
+  .view-project {
+    top: 5rem;
+    position: relative;
+    right: 2rem;
+  }
+
   .about-container {
     flex-direction: column;
   }
 
+  .about-column {
+    width: unset;
+  }
+
+  .about-right {
+    display: none;
+  }
+
+  .about-left {
+    flex-basis: unset;
+  }
+
+  .about-grant,
+  .about-grant-2 {
+    width: 75%;
+    font-size: 1.8rem;
+  }
+
+  .contractor-name {
+    margin-bottom: 3rem;
+  }
+  .grants-name {
+    width: 75%;
+    font-size: 4rem;
+  }
+
+  .about-button {
+    margin-top: 6rem;
+  }
+
+  /* services */
+
+  .services-container {
+    height: unset;
+  }
+
+  .services-title-container {
+    height: unset;
+  }
+
+  .services {
+    width: 80%;
+  }
+
+  .cards-container {
+    flex-direction: column;
+  }
+
+  .card-1,
+  .card-2,
+  .card-3 {
+    margin-top: 3rem;
+    height: 45vh;
+  }
+
+  .card-3 {
+    margin-top: 9rem;
+  }
+
+  .service-type-1,
+  .service-type-2,
+  .service-type-3 {
+    flex-basis: 15%;
+  }
+  .s-type {
+    display: flex;
+    align-items: center;
+  }
+
+  .s-description {
+    width: 90%;
+    text-align: justify;
+  }
+  .s-number {
+    font-size: 5rem;
+  }
+
+  .services-button-container {
+    height: unset;
+    padding-top: 5rem;
+  }
+
+  /* before and afters*/
+  .before-after-title {
+    flex-basis: 10%;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .b-a-title {
+    font-size: 3.5rem;
+    width: 90%;
+  }
+
+  .before-after-title,
+  .villa-name-container {
+    justify-content: center;
+  }
+
+  .villa-name-container {
+    padding-top: unset;
+    flex-basis: 10%;
+  }
+
+  .villa-name {
+    position: relative;
+    top: unset;
+    font-size: 2rem;
+    left: 2rem;
+    font-weight: 900;
+  }
+
+  .villa-content-container {
+    flex-basis: 65%;
+    align-items: flex-start;
+  }
+
+  .villa-image-container {
+    justify-content: center;
+  }
+
   .villa-image {
-    max-width: 100%;
-    min-width: 100%;
-    /* max-height: 70vh; */
+    max-width: 90%;
+    min-width: 90%;
+  }
+
+  .villa-button-container {
+    width: 100%;
+    bottom: 3rem;
+    justify-content: center;
+  }
+
+  .see-villa-button,
+  .before-button,
+  .after-button,
+  .go-green,
+  .go-green-after {
+    left: unset;
+    /* height: 100%; */
+  }
+
+  .button-inner {
+    display: flex;
+    width: 90%;
+  }
+
+  .before-button {
+    border-left: solid 0.1rem grey;
+  }
+
+  .next-button-container {
+    width: 100%;
+    flex-basis: 10%;
+    position: absolute;
+    top: 60%;
+    height: 10vh;
+    justify-content: space-between;
+  }
+
+  .next-button-left,
+  .next-button-right {
+    flex-basis: 20%;
+  }
+
+  .next-button-left:hover,
+  .next-button-right:hover {
+    background-color: unset;
+  }
+
+  /* Villa Projects Page */
+
+  .preview-container {
+    height: 280vh;
+    width: 100%;
+  }
+
+  .preview-card {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: inherit;
+  }
+
+  .preview-image-container {
+    height: 75vh;
+  }
+
+  .sub-link-tumbak.bayuh,
+  .sub-link-cemagi,
+  .sub-link-loft,
+  .sub-link-alive {
+    height: 5vh;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .villa-details-container {
+    height: 10vh;
+  }
+
+  .preview-arrows {
+    top: unset;
+    position: relative;
+    height: unset;
+    bottom: 10rem;
+  }
+
+  .pl-arrow,
+  .pr-arrow {
+    color: black;
+  }
+
+  .villa-card-middle,
+  .villa-card {
+    margin: unset;
+  }
+  .villa-card-middle {
+    margin-bottom: 2rem;
+  }
+
+  .villa-card {
+    height: 100vh;
+  }
+
+  .up {
+    width: 100%;
+    position: absolute;
+  }
+
+  /* TB gallery */
+
+  .tb-gallery-1,
+  .gallery-bottom-container,
+  .tb-gallery-3 {
+    flex-direction: column;
+  }
+
+  .tb-gallery-3,
+  .tb-gallery-2,
+  .tb-gallery-1 {
+    width: 80%;
+  }
+
+  .tb-image-container {
+    flex-basis: unset;
+  }
+
+  .t-details {
+    padding: 1rem 0rem;
   }
 
   .tb-content-container {
-    height: 26.5vh;
+    height: unset;
+    margin: 4rem 0 4rem 0;
+  }
+
+  .tb {
+    display: none;
+  }
+
+  .gallery-top-container,
+  .sub-container {
+    flex-direction: column-reverse;
+  }
+
+  .top-l-image-container,
+  .bottom-r-image-container {
+    margin: 4rem 0rem;
+  }
+
+  .main-image-container {
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .top-r-image-container,
+  .center-content-container {
+    margin: 0rem;
+  }
+
+  .bottom-c-image-container,
+  .left-content-container {
+    margin-top: 3rem;
+  }
+
+  .sub-content-container,
+  .left-content-container {
+    height: unset;
+    margin: unset;
+    margin-bottom: 4rem;
+  }
+
+  .sub-content-container {
+    margin-top: 1rem;
+  }
+
+  .left-content-container {
+    margin-bottom: 3rem;
+  }
+
+  .t-details {
+    margin: unset;
+    padding: 1rem;
+    font-size: 1.5rem;
+  }
+
+  .sub-content-2,
+  .sub-content {
+    padding: 0 2rem 1rem 2rem;
+    margin: unset;
+    font-size: 1.5rem;
+  }
+
+  .sub-image-container {
+    margin-bottom: 4rem;
+  }
+
+  .content-ul {
+    font-size: 1.5rem;
+    padding: 0 0.5rem 0.5rem 0.5rem;
+  }
+
+  .center-content {
+    padding: 0.5rem;
+  }
+
+  .pl-arrow,
+  .pr-arrow {
+    font-size: 4rem;
+  }
+
+  .pl-arrow {
+    left: 0rem;
+  }
+
+  .pr-arrow {
+    right: 2rem;
   }
 }

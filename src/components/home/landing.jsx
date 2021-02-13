@@ -19,7 +19,7 @@ const LandingPage = ({ handleScroll }) => {
         </div>
 
         <div className="canggu-image-container">
-          <div style={{ width: 3000, height: 621 }} className="pool-div">
+          <div className="pool-div">
             <img className="canggu-pool" src={CangguPool} />
           </div>
           <div className="reno-container">
@@ -39,7 +39,7 @@ const LandingPage = ({ handleScroll }) => {
 
             <div className="view-project">
               <p onClick={handleScroll} className="view-canggu">
-                View Before & Afters
+                More Details
               </p>
             </div>
           </div>

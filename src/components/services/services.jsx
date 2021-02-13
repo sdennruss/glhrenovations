@@ -2,10 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Cards from "./cards";
 
-const Services = () => {
+const Services = ({ serviceRef }) => {
   return (
     <React.Fragment>
-      <div className="services-container">
+      <div ref={serviceRef} className="services-container">
         <div className="services">
           <div className="services-title-container">
             <h2 className="service-title">

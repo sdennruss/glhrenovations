@@ -11,18 +11,15 @@ const Alive = () => {
           </div>
           <div className="tb-content-container">
             <div className="tb-description">
-              <h2 className="tumbak">Modern Meets Industrial</h2>
+              <h2 className="tumbak">Health & Wellness Organic Shop</h2>
             </div>
 
             <div className="tb-details">
-              <p>
-                Australian born with an electrical background based in Bali
-                discovering abandoned homes and shops and turning them into dime
-                in a dozens for rental property purposes and popular health food
-                stores such as the Alive Wholefoods Store located in Canggu,
-                Bali. With almost 9 years renovating and desinging spaces, I’ve
-                diversiveif myself as a One Man Show show tackling interior
-                decorating, plumbing, and eletrical work.{" "}
+              <p className="t-details">
+                Fun facts. I was a partner of the Alive Wholefoods Store in
+                Canggu 5 years ago and built it from the ground up. For more
+                details on the aesthetics of the shop, feel free to visit Alive
+                on Jl. Canggu Padang Linjong.{" "}
               </p>
             </div>
           </div>
