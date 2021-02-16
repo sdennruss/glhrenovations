@@ -5,10 +5,10 @@ import loft3 from "./assets/loft3.jpeg";
 import loft4 from "./assets/loft4.jpg";
 import loft5 from "./assets/loft5.jpeg";
 
-const Loft = () => {
+const Loft = ({ scrollRef }) => {
   return (
     <React.Fragment>
-      <div className="tb-container" id="loft">
+      <div id="loft" className="tb-container">
         <div className="tb-gallery-1">
           <div className="tb-image-container">
             <img className="tb-image" src={loft1} />

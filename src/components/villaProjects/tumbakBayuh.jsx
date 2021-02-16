@@ -8,10 +8,10 @@ import tumbak6 from "./assets/tumbak6.jpg";
 import tumbak7 from "./assets/tumbak7.jpg";
 import tumbak8 from "./assets/tumbak8.jpg";
 
-const TumbakBayuh = () => {
+const TumbakBayuh = ({ scrollRef }) => {
   return (
     <React.Fragment>
-      <div className="tb-container">
+      <div id="tumbakbayuh" className="tb-container">
         <div className="tb-gallery-1">
           <div className="tb-image-container">
             <img className="tb-image" src={tumbak1} />

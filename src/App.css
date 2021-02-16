@@ -73,19 +73,16 @@ h2 {
   height: 10vh;
   top: 0;
   padding: 1rem;
-  /* background: gainsboro; */
 }
 
 .glh-logo {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* background-color: gold; */
   position: fixed;
   z-index: 2;
   width: 5%;
   right: 1rem;
-  /* height: 10vh; */
   flex-basis: 5%;
 }
 
@@ -113,7 +110,6 @@ h2 {
   opacity: 0.9;
   letter-spacing: 0.3rem;
   font-family: "Playfair Display", serif;
-  /* text-transform: uppercase; */
   font-weight: bolder;
   cursor: pointer;
   text-decoration: none;
@@ -275,17 +271,6 @@ input {
   z-index: 3;
 }
 
-/* .menuExit {
-  background: var(--secondary-color);
-  position: fixed;
-  height: 100vh;
-  width: 100vw;
-  top: 0;
-  left: 0;
-  animation: close 800ms ease-out forwards;
-  z-index: 4;
-} */
-
 #menuToggle:not(:checked) ~ .menuEffects .navigation-list {
   transform: translateY(-30%);
 }
@@ -352,7 +337,6 @@ input {
 .toggle-links-Contact .underline-Contact::after {
   right: 2.5px;
   background: #dbdfe4;
-  /* opacity: 0.8; */
   transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
@@ -361,7 +345,6 @@ input {
 .toggle-links-Contact .underline-Contact:hover::before {
   background: var(--secondary-color);
   width: 100%;
-  /* opacity: 0.8; */
   transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
@@ -455,7 +438,6 @@ input {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* background-color: lavender; */
   height: 621px;
 }
 
@@ -469,7 +451,6 @@ input {
 }
 
 .reno-title {
-  /* background-color: khaki; */
   flex-basis: 20%;
 }
 
@@ -483,7 +464,6 @@ input {
 }
 
 .reno-location {
-  /* background-color: pink; */
   flex-basis: 15%;
   align-items: flex-start;
 }
@@ -528,7 +508,6 @@ input {
 }
 
 .view-canggu:hover {
-  /* padding: 1.3rem 3.5rem; */
   font-weight: 800;
 }
 
@@ -718,16 +697,6 @@ input {
   box-shadow: 1px 2px 5px #555;
 }
 
-/* .square-outline {
-  border: 15px solid var(--dominant-color);
-  position: absolute;
-  transform: rotate(55deg);
-  padding: 50rem;
-  bottom: -80rem;
-  right: 3rem;
-  z-index: -1;
-} */
-
 .cards-container {
   display: flex;
   justify-content: center;
@@ -804,20 +773,17 @@ input {
   min-height: 100vh;
   max-height: 100vh;
   min-width: 100%;
-  /* background-color: cornsilk; */
   width: 100%;
 }
 
 .project-card-container {
   display: flex;
   position: relative;
-  /* background: crimson; */
   width: 90%;
   height: 90vh;
 }
 
 .project-card {
-  /* background-color: darkkhaki; */
   flex: 1;
   display: flex;
   position: relative;
@@ -1018,34 +984,30 @@ input {
   position: absolute;
   width: 100%;
   bottom: 0rem;
-  top: 0rem;
-  height: 42vh;
 }
 .pl-arrow,
 .pr-arrow {
   display: flex;
   position: absolute;
   z-index: 2;
-  color: white;
+  color: black;
   max-width: 5%;
-  font-size: 2.5rem;
-  opacity: 0.8;
+  font-size: 3rem;
   letter-spacing: 0.1rem;
   cursor: pointer;
 }
 
 .pl-arrow:hover,
 .pr-arrow:hover {
-  font-size: 3rem;
-  opacity: 1;
+  font-size: 3.1rem;
 }
 
 .pl-arrow {
-  left: 1.5rem;
+  left: 0rem;
 }
 
 .pr-arrow {
-  right: 1.5rem;
+  right: 0rem;
 }
 
 .prev-arrow {
@@ -1059,18 +1021,6 @@ input {
   align-items: center;
   width: 100%;
 }
-
-/* .villa-card-tumbak.bayuh,
-.villa-card-cemagi,
-.villa-card-loft,
-.villa-card-alive {
-  position: relative;
-  overflow: hidden;
-} */
-
-/* .villa-card-alive {
-  display: none;
-} */
 
 .villa-card,
 .villa-card-middle {
@@ -1114,18 +1064,6 @@ input {
 .preview-card {
   height: 85vh;
 }
-
-/* .sub-link-tumbak.bayuh,
-.sub-link-cemagi,
-.sub-link-loft,
-.sub-link-alive,
-.sub-link-canggu {
-  width: 30%;
-} */
-
-/* .sub-link-cemagi {
-  padding: 0 1rem;
-} */
 
 .villa-links {
   display: flex;
@@ -1235,7 +1173,7 @@ input {
   flex-basis: 100%;
   height: 10vh;
   bottom: 45%;
-  right: 2rem;
+  right: 4rem;
   z-index: 2;
 }
 
@@ -1247,7 +1185,7 @@ input {
 
 .up-arrow:hover {
   letter-spacing: 0.1rem;
-  right: 1.5rem;
+  right: 4rem;
 }
 /* Tumbak Bayuh SubLink */
 
@@ -1275,10 +1213,6 @@ input {
   justify-content: center;
   flex-basis: 70%;
   max-height: 100vh;
-}
-
-.tb-image {
-  /* max-height: 100vh; */
 }
 
 .tb-content-container {
@@ -1343,14 +1277,12 @@ input {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  /* background-color: lightcoral; */
   width: 100%;
   min-height: 100vh;
 }
 
 .tb-gallery-2,
 .tb-gallery-3 {
-  /* background-color: var(--dominant-color); */
   align-items: center;
   flex-direction: column;
   justify-content: space-evenly;
@@ -1438,7 +1370,6 @@ input {
 }
 
 .tb-gallery-3 {
-  /* background-color: khaki; */
   width: 90%;
   min-height: 90vh;
   display: flex;
@@ -1480,6 +1411,61 @@ input {
   opacity: 0.9;
 }
 
+/* Contact Us */
+
+.contact-container {
+  display: flex;
+  justify-content: center;
+
+  height: 90vh;
+}
+
+.contact-columns {
+  display: flex;
+  width: 90%;
+  align-items: center;
+  height: 80vh;
+}
+
+.contact-left {
+  flex: 1;
+  height: inherit;
+  display: flex;
+  align-items: center;
+  height: 40vh;
+  border-right: 1px solid black;
+}
+
+.contact-title {
+  width: 100%;
+  text-align: center;
+  padding: 3rem;
+}
+
+.contact-right {
+  flex: 1;
+  height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40vh;
+}
+
+.contact-details {
+  width: 100%;
+  text-align: center;
+}
+
+.contact-info {
+  padding-bottom: 1rem;
+}
+
+.bold-contact {
+  font-family: "Wremena-Light";
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+
 @media (max-width: 768px) {
   h2 {
     font-size: 4rem;
@@ -1492,8 +1478,8 @@ input {
 
   .glh-logo {
     width: 10%;
-    top: 2.1rem;
-    right: 1.1rem;
+    /* top: 2.1rem; */
+    right: 0.6rem;
   }
 
   .glh {
@@ -1501,7 +1487,7 @@ input {
   }
 
   .logo {
-    width: 60%;
+    width: 70%;
   }
 
   .company-name {
@@ -1517,6 +1503,11 @@ input {
   .pinterest-contact {
     height: 100vh;
     left: 1rem;
+  }
+
+  .pinterest-account,
+  .glh-email {
+    font-size: 1.4rem;
   }
 
   .email-contact {
@@ -1544,7 +1535,6 @@ input {
     height: unset;
     position: relative;
     top: 2rem;
-    /* margin: 1rem; */
   }
 
   .reno-title {
@@ -1554,7 +1544,7 @@ input {
   .reno-location {
     position: absolute;
     bottom: 40rem;
-    padding: 1.5rem;
+    padding-left: 1.5rem;
   }
 
   .reno-description {
@@ -1731,8 +1721,7 @@ input {
     width: 100%;
     flex-basis: 10%;
     position: absolute;
-    top: 60%;
-    height: 10vh;
+    top: 65%;
     justify-content: space-between;
   }
 
@@ -1805,6 +1794,18 @@ input {
   .up {
     width: 100%;
     position: absolute;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+  }
+
+  .up-arrow:hover {
+    letter-spacing: 0.1rem;
+    right: 2rem;
+  }
+
+  .up-arrow {
+    right: 2rem;
   }
 
   /* TB gallery */
@@ -1819,6 +1820,7 @@ input {
   .tb-gallery-2,
   .tb-gallery-1 {
     width: 80%;
+    justify-content: start;
   }
 
   .tb-image-container {
@@ -1915,5 +1917,15 @@ input {
 
   .pr-arrow {
     right: 2rem;
+  }
+
+  /* Contact Us*/
+  .contact-columns {
+    flex-direction: column;
+  }
+
+  .contact-left {
+    border: unset;
+    border-bottom: 1px solid black;
   }
 }

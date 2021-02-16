@@ -61,12 +61,9 @@ const ProjectDetails = () => {
 
           <div className="villa-button-container">
             <div className="button-inner">
-              <Link
-                to={`/Villa Projects/${villaRenos[changePhoto].seeVilla}`}
-                className="see-villa-button"
-              >
+              <a href={`/Villa Projects/`} className="see-villa-button">
                 See Villa
-              </Link>
+              </a>
               <a
                 onClick={() =>
                   handleBeforePhoto(

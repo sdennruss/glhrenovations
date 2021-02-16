@@ -8,10 +8,10 @@ import cemagi6 from "./assets/cemagi6.jpg";
 import cemagi7 from "./assets/cemagi7.jpg";
 import cemagi8 from "./assets/cemagi8.jpg";
 
-const Cemagi = () => {
+const Cemagi = ({ scrollRef }) => {
   return (
     <React.Fragment>
-      <div className="tb-container">
+      <div id="cemagi" className="tb-container">
         <div className="tb-gallery-1">
           <div className="tb-image-container">
             <img className="tb-image" src={cemagi1} />

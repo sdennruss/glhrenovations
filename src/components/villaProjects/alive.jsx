@@ -4,7 +4,7 @@ import alive1 from "./assets/alive1.jpg";
 const Alive = () => {
   return (
     <React.Fragment>
-      <div className="tb-container">
+      <div id="alive" className="tb-container">
         <div className="tb-gallery-1">
           <div className="tb-image-container">
             <img className="tb-image" src={alive1} />

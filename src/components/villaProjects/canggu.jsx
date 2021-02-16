@@ -7,10 +7,10 @@ import canggu5 from "./assets/canggu5.jpg";
 import canggu6 from "./assets/canggu6.jpg";
 import canggu7 from "./assets/canggu7.jpg";
 
-const Canggu = () => {
+const Canggu = ({ scrollRef }) => {
   return (
     <React.Fragment>
-      <div className="tb-container">
+      <div id="canggu" className="tb-container">
         <div className="tb-gallery-1">
           <div className="tb-image-container">
             <img className="tb-image" src={canggu1} />

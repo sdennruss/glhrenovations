@@ -1,11 +1,10 @@
 import React from "react";
 import Home from "./components/home/home";
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import VillaProjects from "./components/villaProjects/villaProjects";
 import "./App.css";
 import ContactUs from "./components/contact/contactUs";
 import Header from "./components/header/header";
-import Cemagi from "./components/villaProjects/cemagi";
 
 const App = () => {
   return (

@@ -1,15 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-scroll";
 
 const SideBar = ({ seeVilla, villa }) => {
   return (
     <React.Fragment>
       <div className={`sub-link-${villa}`}>
         <div className="villa-links">
-          <Link to={`/Villa Projects/${seeVilla}`} className={`villa-${villa}`}>
+          <a className={`villa-${villa}`} href={`#${seeVilla}`}>
             <span className="villa-underline"></span>
             {villa}
-          </Link>
+          </a>
         </div>
       </div>
     </React.Fragment>

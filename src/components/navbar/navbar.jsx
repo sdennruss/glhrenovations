@@ -14,7 +14,11 @@ const NavBar = ({ onToggle, expand, close }) => {
                 <Link
                   onClick={() => onToggle(!expand, "toggle-trans")}
                   className={`toggle-links-${navigation}`}
-                  to={`/${navigation}`}
+                  to={
+                    navigation === "Villa Projects"
+                      ? "Villa Projects/tumbakbayuh"
+                      : `/${navigation}`
+                  }
                 >
                   <span className={`underline-${navigation}`}>
                     {navigation}

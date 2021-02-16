@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import { Link, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { villaRenos } from "./beforeAfters";
 import Description from "./description";
 import SideBar from "./sidebar";
@@ -23,13 +23,23 @@ const VillaProjects = () => {
     console.log(back);
   };
 
+  const scrollRef = useRef();
+
+  function handleScroll() {
+    scrollRef.current.scrollIntoView({ behavior: "smooth" });
+  }
+
   return (
     <React.Fragment>
-      <div className="preview-container">
+      <div className="expand-transition"></div>
+
+      <div id="top" className="preview-container">
         <div className="preview-card">
           <div className={`villa-card`}>
             <VillaPreview villaPrev={villaRenos[nextArrow].villaPreview} />
             <SideBar
+              scrollRef={scrollRef}
+              handleScroll={handleScroll}
               seeVilla={villaRenos[nextArrow].seeVilla}
               villa={villaRenos[nextArrow].villa}
             />
@@ -38,6 +48,8 @@ const VillaProjects = () => {
           <div className={`villa-card-middle`}>
             <VillaPreview villaPrev={villaRenos[nextArrow + 1].villaPreview} />
             <SideBar
+              scrollRef={scrollRef}
+              handleScroll={handleScroll}
               seeVilla={villaRenos[nextArrow + 1].seeVilla}
               villa={villaRenos[nextArrow + 1].villa}
             />
@@ -46,6 +58,8 @@ const VillaProjects = () => {
           <div className={`villa-card`}>
             <VillaPreview villaPrev={villaRenos[nextArrow + 2].villaPreview} />
             <SideBar
+              scrollRef={scrollRef}
+              handleScroll={handleScroll}
               seeVilla={villaRenos[nextArrow + 2].seeVilla}
               villa={villaRenos[nextArrow + 2].villa}
             />
@@ -68,31 +82,16 @@ const VillaProjects = () => {
         </div>
       </div>
       <div className="up-arrow">
-        <Link className="up" to="/Villa Projects">
+        <a className="up" href="top">
           Top
-        </Link>
+        </a>
       </div>
 
-      <Route
-        path="/Villa Projects/cemagi"
-        render={(props) => <Cemagi {...props} />}
-      />
-      <Route
-        path="/Villa Projects/tumbakbayuh"
-        render={(props) => <TumbakBayuh {...props} />}
-      />
-      <Route
-        path="/Villa Projects/loft"
-        render={(props) => <Loft {...props} />}
-      />
-      <Route
-        path="/Villa Projects/alive"
-        render={(props) => <Alive {...props} />}
-      />
-      <Route
-        path="/Villa Projects/canggu"
-        render={(props) => <Canggu {...props} />}
-      />
+      <TumbakBayuh />
+      <Cemagi />
+      <Loft />
+      <Alive />
+      <Canggu />
     </React.Fragment>
   );
 };
