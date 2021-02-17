@@ -37,7 +37,7 @@ export const villaRenos = [
     before: loftBefore,
     after: loftAfter,
     seeVilla: "loft",
-    description: "Industrial Lost ",
+    description: "Industrial Loft ",
     availability: "",
     villaPreview: villaPreview3,
   },

@@ -103,7 +103,7 @@ const ProjectDetails = () => {
             }
             className="next-button-left"
           >
-            <img src={arrow} className="left-arrow" />
+            <i className="fa fa-arrow-circle-left" aria-hidden="true"></i>
           </a>
           <a
             onClick={() =>
@@ -115,7 +115,7 @@ const ProjectDetails = () => {
             }
             className="next-button-right"
           >
-            <img src={arrow} className="right-arrow" />
+            <i className="fa fa-arrow-circle-right" aria-hidden="true"></i>
           </a>
         </div>
       </div>

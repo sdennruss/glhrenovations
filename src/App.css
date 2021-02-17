@@ -960,19 +960,9 @@ input {
   background-color: var(--dominant-color);
 }
 
-.left-arrow,
-.right-arrow {
-  cursor: pointer;
-  min-width: 50%;
-  max-width: 50%;
-}
-
-.left-arrow {
-  transform: rotate(90deg);
-}
-
-.right-arrow {
-  transform: rotate(-90deg);
+.arrows {
+  font-size: 2rem;
+  font-weight: 800;
 }
 
 /* Sidebar */
@@ -1293,7 +1283,7 @@ input {
   display: flex;
   position: relative;
   width: 100%;
-  height: auto;
+  /* height: auto; */
 }
 
 .gallery-top-container {
@@ -1467,6 +1457,16 @@ input {
 }
 
 @media (max-width: 768px) {
+  .tb-image,
+  .r-image,
+  .l-image,
+  .bc-image,
+  .br-image,
+  .sub-image,
+  .main-image {
+    height: 35vh;
+  }
+
   h2 {
     font-size: 4rem;
   }
@@ -1518,9 +1518,6 @@ input {
   .canggu-image-container {
     flex-direction: column;
   }
-  .landing-container {
-    height: 90vh;
-  }
 
   .pool-div {
     width: unset;
@@ -1543,7 +1540,7 @@ input {
 
   .reno-location {
     position: absolute;
-    bottom: 40rem;
+    bottom: 33rem;
     padding-left: 1.5rem;
   }
 
@@ -1554,7 +1551,7 @@ input {
   }
 
   .r-descrip {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   .view-project {
@@ -1582,7 +1579,7 @@ input {
   .about-grant,
   .about-grant-2 {
     width: 75%;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 
   .contractor-name {
@@ -1723,16 +1720,26 @@ input {
     position: absolute;
     top: 65%;
     justify-content: space-between;
+    padding: 0 1rem;
   }
 
   .next-button-left,
   .next-button-right {
-    flex-basis: 20%;
+    width: unset;
+    font-size: 2.5rem;
   }
 
   .next-button-left:hover,
   .next-button-right:hover {
     background-color: unset;
+  }
+
+  .left-arrow,
+  .right-arrow {
+    cursor: pointer;
+    max-width: unset;
+    max-width: unset;
+    width: 5%;
   }
 
   /* Villa Projects Page */
@@ -1824,7 +1831,7 @@ input {
   }
 
   .tb-image-container {
-    flex-basis: unset;
+    /* flex-basis: unset; */
   }
 
   .t-details {
@@ -1837,7 +1844,15 @@ input {
   }
 
   .tb {
-    display: none;
+    font-size: 2rem;
+    width: 100%;
+    text-align: center;
+    bottom: -20rem;
+    position: relative;
+  }
+
+  .tb-container {
+    overflow: unset;
   }
 
   .gallery-top-container,
